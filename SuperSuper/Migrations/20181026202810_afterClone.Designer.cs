@@ -10,8 +10,8 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181026185328_Initial")]
-    partial class Initial
+    [Migration("20181026202810_afterClone")]
+    partial class afterClone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
