@@ -86,6 +86,8 @@ namespace SuperSuper.Migrations
 
                     b.Property<DateTime>("PurchesDate");
 
+                    b.Property<bool>("Purchesed");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");

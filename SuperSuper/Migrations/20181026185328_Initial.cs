@@ -79,7 +79,8 @@ namespace SuperSuper.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ProductId = table.Column<int>(nullable: true),
                     CustomerId = table.Column<int>(nullable: true),
-                    PurchesDate = table.Column<DateTime>(nullable: false)
+                    PurchesDate = table.Column<DateTime>(nullable: false),
+                    Purchesed = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

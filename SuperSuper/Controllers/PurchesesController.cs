@@ -13,6 +13,7 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+        
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;

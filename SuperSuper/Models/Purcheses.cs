@@ -15,5 +15,7 @@ namespace SuperSuper.Models
 		public Customer Customer { get; set; }
 
 		public DateTime PurchesDate { get; set; }
-	}
+
+        public bool Purchesed { get; set; }
+    }
 }

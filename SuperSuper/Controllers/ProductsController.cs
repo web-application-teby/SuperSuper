@@ -18,6 +18,28 @@ namespace SuperSuper.Controllers
             _context = context;
         }
 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public void Add(Product product)
+        {
+            Customer c = new Customer
+            {
+                UserName = "aa"
+            };
+
+            Purcheses p = new Purcheses
+            {
+                Product = product,
+                Customer = c,
+                PurchesDate = DateTime.Now,
+                Purchesed = false
+            };
+
+            _context.Purcheses.Add(p);
+            _context.SaveChanges();
+        }
+
         // Post: Products search
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -41,6 +63,7 @@ namespace SuperSuper.Controllers
             return View(await result.ToListAsync());
         }
 
+        
         // GET: Products
         public async Task<IActionResult> Index()
         {
