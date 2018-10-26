@@ -5,7 +5,6 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\Super
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.Views.dll
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.Views.pdb
-C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csprojAssemblyReference.cache
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CoreCompileInputs.cache
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.RazorAssemblyInfo.cache
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.RazorAssemblyInfo.cs
