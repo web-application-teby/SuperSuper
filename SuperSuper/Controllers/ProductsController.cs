@@ -13,9 +13,69 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+        Product p1 = new Product
+        {
+            Name = "Milk",
+            Fat = false,
+            Kosher = true,
+            Price = 5.90,
+            Supplier = "Shupersal"
+        };
+
+        Product p2 = new Product
+        {
+            Name = "Milk",
+            Fat = false,
+            Kosher = true,
+            Price = 6.10,
+            Supplier = "Super Yehuda"
+        };
+
+        Product p3 = new Product
+        {
+            Name = "Milk",
+            Fat = false,
+            Kosher = true,
+            Price = 6.30,
+            Supplier = "Tiv Taam"
+        };
+
+        Product p4 = new Product
+        {
+            Name = "Bread",
+            Fat = false,
+            Kosher = true,
+            Price = 25.90,
+            Supplier = "Shupersal"
+        };
+
+        Product p5 = new Product
+        {
+            Name = "Bread",
+            Fat = false,
+            Kosher = true,
+            Price = 16.10,
+            Supplier = "Super Yehuda"
+        };
+
+        Product p6 = new Product
+        {
+            Name = "Bread",
+            Fat = false,
+            Kosher = true,
+            Price = 16.30,
+            Supplier = "Tiv Taam"
+        };
         public ProductsController(SuperSuperContext context)
         {
             _context = context;
+            _context.Add(p1);
+            _context.Add(p2);
+            _context.Add(p3);
+            _context.Add(p4);
+            _context.Add(p5);
+            _context.Add(p6);
+            _context.SaveChanges();
         }
 
 
