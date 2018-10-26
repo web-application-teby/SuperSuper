@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -30,8 +32,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li>@Html.ActionLink("Purcheses", "Index", "Purcheses")</li>
+                    <li>@Html.ActionLink("Buy Now!", "Index", "Products")</li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>
@@ -44,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - SuperSuper</p>
+            <p>&copy; 2018 - SuperSuper by Evgeniy, Yarden, Bar & Talia</p>
         </footer>
     </div>
 

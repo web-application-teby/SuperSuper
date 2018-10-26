@@ -18,10 +18,38 @@ namespace SuperSuper.Controllers
             _context = context;
         }
 
+        // Post: Products search
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(Product.Category category, bool fat, string productName)
+        {
+            //var result = from t in _context.Product select t;
+            var result = from row in _context.Product
+            group row by row.Name into grp
+            select grp.OrderBy(a => a.Price).First();
+
+            if (!string.IsNullOrEmpty(productName))
+            {
+                result = result.Where(x => x.Name == productName);
+            }
+
+            if (!fat)
+            {
+                result = result.Where(x => x.Fat == false);
+            }
+
+            return View(await result.ToListAsync());
+        }
+
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            var result = from row in _context.Product
+                         group row by row.Name into grp
+                         select grp.OrderBy(a => a.Price).First();
+
+            return View(result);
+            //return View(await _context.Product.ToListAsync());
         }
 
         // GET: Products/Details/5

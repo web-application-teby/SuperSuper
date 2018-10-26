@@ -15,16 +15,16 @@ namespace SuperSuper.Controllers
 			return View();
 		}
 
-		public IActionResult About()
+		public IActionResult Product()
 		{
-			ViewData["Message"] = "Your application description page.";
+			ViewData["Message"] = "Your Products page.";
 
-			return View();
+            return View("~/Views/Products/Create.cshtml");
 		}
 
-		public IActionResult Contact()
+		public IActionResult Purcheses()
 		{
-			ViewData["Message"] = "Your contact page.";
+			ViewData["Message"] = "Your Purcheses page.";
 
 			return View();
 		}
