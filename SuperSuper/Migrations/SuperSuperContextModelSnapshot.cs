@@ -40,17 +40,13 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
-                        .IsRequired();
+                    b.Property<string>("Address");
 
-                    b.Property<string>("EmailAdress")
-                        .IsRequired();
+                    b.Property<string>("EmailAdress");
 
-                    b.Property<string>("Password")
-                        .IsRequired();
+                    b.Property<string>("Password");
 
-                    b.Property<string>("UserName")
-                        .IsRequired();
+                    b.Property<string>("UserName");
 
                     b.HasKey("Id");
 
@@ -63,9 +59,9 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerId");
-
                     b.Property<bool>("Fat");
+
+                    b.Property<bool>("Kosher");
 
                     b.Property<string>("Name");
 
@@ -74,8 +70,6 @@ namespace SuperSuper.Migrations
                     b.Property<string>("Supplier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Product");
                 });
@@ -118,13 +112,6 @@ namespace SuperSuper.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SuperUser");
-                });
-
-            modelBuilder.Entity("SuperSuper.Models.Product", b =>
-                {
-                    b.HasOne("SuperSuper.Models.Customer")
-                        .WithMany("CustomerBucket")
-                        .HasForeignKey("CustomerId");
                 });
 
             modelBuilder.Entity("SuperSuper.Models.Purcheses", b =>

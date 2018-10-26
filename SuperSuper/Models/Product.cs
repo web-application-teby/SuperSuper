@@ -29,5 +29,7 @@ namespace SuperSuper.Models
 
 		public string Supplier { get; set; }
 
+        public bool Kosher { get; set; }
+
 	}
 }

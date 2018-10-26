@@ -4,16 +4,59 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SuperSuper.Migrations
 {
-    public partial class productEnum : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Category",
-                table: "Product");
+            migrationBuilder.CreateTable(
+                name: "Admin",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admin", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Customer",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    EmailAdress = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customer", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Price = table.Column<double>(nullable: false),
+                    Fat = table.Column<bool>(nullable: false),
+                    Supplier = table.Column<string>(nullable: true),
+                    Kosher = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SuperUser",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -25,7 +68,7 @@ namespace SuperSuper.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customer", x => x.Id);
+                    table.PrimaryKey("PK_SuperUser", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,15 +112,19 @@ namespace SuperSuper.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Admin");
+
+            migrationBuilder.DropTable(
                 name: "Purcheses");
+
+            migrationBuilder.DropTable(
+                name: "SuperUser");
 
             migrationBuilder.DropTable(
                 name: "Customer");
 
-            migrationBuilder.AddColumn<string>(
-                name: "Category",
-                table: "Product",
-                nullable: true);
+            migrationBuilder.DropTable(
+                name: "Product");
         }
     }
 }

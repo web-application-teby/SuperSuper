@@ -10,8 +10,8 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181023203008_productEnum")]
-    partial class productEnum
+    [Migration("20181026171844_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,21 @@ namespace SuperSuper.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("SuperSuper.Models.Admin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Password");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admin");
+                });
 
             modelBuilder.Entity("SuperSuper.Models.Customer", b =>
                 {
@@ -33,7 +48,7 @@ namespace SuperSuper.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<int>("UserName");
+                    b.Property<string>("UserName");
 
                     b.HasKey("Id");
 
@@ -47,6 +62,8 @@ namespace SuperSuper.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Fat");
+
+                    b.Property<bool>("Kosher");
 
                     b.Property<string>("Name");
 
@@ -78,6 +95,25 @@ namespace SuperSuper.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Purcheses");
+                });
+
+            modelBuilder.Entity("SuperSuper.Models.SuperUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address");
+
+                    b.Property<string>("EmailAdress");
+
+                    b.Property<string>("Password");
+
+                    b.Property<int>("UserName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SuperUser");
                 });
 
             modelBuilder.Entity("SuperSuper.Models.Purcheses", b =>
