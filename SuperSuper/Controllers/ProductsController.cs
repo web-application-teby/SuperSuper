@@ -19,14 +19,26 @@ namespace SuperSuper.Controllers
         }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public void Add(Product product)
+        public async Task<IActionResult> Add(int? id)
         {
             Customer c = new Customer
             {
                 UserName = "aa"
             };
+            _context.Add(c);
+            _context.SaveChanges();
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Product
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
 
             Purcheses p = new Purcheses
             {
@@ -38,6 +50,8 @@ namespace SuperSuper.Controllers
 
             _context.Purcheses.Add(p);
             _context.SaveChanges();
+
+            return View("Details", product);
         }
 
         // Post: Products search
