@@ -8,22 +8,21 @@ namespace SuperSuper.Models
 {
 	public class Customer
 	{
-        [Required]
+        //[Required]
         public int Id { get; set; }
 
-        [Required]
+        //[Required]
         public string UserName { get; set; }
 
-        [Required]
+        //[Required]
         public string Address { get; set; }
 
-        [Required]
         public string EmailAdress { get; set; }
 
-        [Required(ErrorMessage = "please provide password")]
-        [DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
+        //[Required(ErrorMessage = "please provide password")]
+        //[DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
         public string Password { get; set; }
 
-        public List<Product> CustomerBucket{ get; set; }
+        //public List<Product> CustomerBucket{ get; set; }
     }
 }
