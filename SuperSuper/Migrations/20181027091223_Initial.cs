@@ -46,7 +46,7 @@ namespace SuperSuper.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Price = table.Column<double>(nullable: false),
-                    Fat = table.Column<bool>(nullable: false),
+                    Diet = table.Column<bool>(nullable: false),
                     Supplier = table.Column<string>(nullable: true),
                     Kosher = table.Column<bool>(nullable: false)
                 },

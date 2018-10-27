@@ -16,7 +16,7 @@ namespace SuperSuper.Controllers
         Product p1 = new Product
         {
             Name = "Milk",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 5.90,
             Supplier = "Shupersal"
@@ -25,7 +25,7 @@ namespace SuperSuper.Controllers
         Product p2 = new Product
         {
             Name = "Milk",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 6.10,
             Supplier = "Super Yehuda"
@@ -34,7 +34,7 @@ namespace SuperSuper.Controllers
         Product p3 = new Product
         {
             Name = "Milk",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 6.30,
             Supplier = "Tiv Taam"
@@ -43,7 +43,7 @@ namespace SuperSuper.Controllers
         Product p4 = new Product
         {
             Name = "Bread",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 25.90,
             Supplier = "Shupersal"
@@ -52,7 +52,7 @@ namespace SuperSuper.Controllers
         Product p5 = new Product
         {
             Name = "Bread",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 16.10,
             Supplier = "Super Yehuda"
@@ -61,7 +61,7 @@ namespace SuperSuper.Controllers
         Product p6 = new Product
         {
             Name = "Bread",
-            Fat = false,
+            Diet = false,
             Kosher = true,
             Price = 16.30,
             Supplier = "Tiv Taam"
@@ -117,7 +117,7 @@ namespace SuperSuper.Controllers
         // Post: Products search
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(Product.Category category, bool fat, string productName)
+        public async Task<IActionResult> Index(Product.Category category, bool Diet, string productName)
         {
             //var result = from t in _context.Product select t;
 
@@ -130,9 +130,9 @@ namespace SuperSuper.Controllers
                 result = result.Where(x => x.Name.Contains(productName));
             }
 
-            if (fat == true)
+            if (Diet == true)
             {
-                result = result.Where(x => x.Fat == true);
+                result = result.Where(x => x.Diet == true);
             }
 
             return View(await result.ToListAsync());
@@ -179,7 +179,7 @@ namespace SuperSuper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Fat,Supplier")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,Diet,Supplier")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -211,7 +211,7 @@ namespace SuperSuper.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Fat,Supplier")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Diet,Supplier")] Product product)
         {
             if (id != product.Id)
             {

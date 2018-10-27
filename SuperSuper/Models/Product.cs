@@ -25,7 +25,7 @@ namespace SuperSuper.Models
 
 		public double Price { get; set; }
 
-		public bool Fat { get; set; }
+		public bool Diet { get; set; }
 
 		public string Supplier { get; set; }
 

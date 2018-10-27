@@ -59,7 +59,7 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("Fat");
+                    b.Property<bool>("Diet");
 
                     b.Property<bool>("Kosher");
 
