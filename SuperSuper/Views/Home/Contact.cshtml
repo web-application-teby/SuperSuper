@@ -1,17 +1,53 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<img src="~/images/contact.jpg" alt="contact" class="img-responsive" />
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <h1 style="color:black;">Contact us</h1>
+
+    <p>
+        Can’t find what you were looking for? We’re here to help. Call customer service at 1800-99-99-99 or leave us a message here:
+    </p>
+
+    <div class="container">
+        <form action="action_page.php">
+            <br />
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="First Name" required placeholder="Your first Name...">
+            <br />
+            <br />
+
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="Last Name" required placeholder="Your Last Name...">
+            <br />
+            <br />
+
+            <label for="country">Area</label>
+            <select id="area" name="area">
+                <option value="center">center</option>
+                <option value="shfela">shfela</option>
+                <option value="hasharon">hasharon</option>
+                <option value="north">north</option>
+                <option value="south">south</option>
+                <option value="ayosh">ayosh</option>
+            </select>
+            <br />
+            <br />
+
+            <label for="subject">Write something...</label>
+            <br />
+            <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+            <br />
+            <br />
+
+            <input type="reset" name="clean form" value="clean form">
+
+            <input type="submit" value="send">
+
+
+        </form>
+        
+
+    </div>
