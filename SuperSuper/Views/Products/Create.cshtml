@@ -1,4 +1,6 @@
-﻿@model SuperSuper.Models.Product
+﻿
+
+@model SuperSuper.Models.Product
 
 @{
     ViewData["Title"] = "Create";
@@ -31,13 +33,15 @@
 			</div>
 
 			<div class="form-group">
-				<label for="Category">Select list:</label>
-				<select class="form-control" id="Category">
+				<label for="Category">Category</label>
+				
+                <select class="form-control" id="Category">
+                    
                     <option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-				</select>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
 			</div>
 			<div class="form-group">
 				<label asp-for="Supplier" class="control-label"></label>
