@@ -31,8 +31,6 @@ namespace SuperSuper.Controllers
 
         public IActionResult Contact()
         {
-          
-      
             return View();
         }
 
