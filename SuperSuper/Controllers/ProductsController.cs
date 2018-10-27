@@ -46,7 +46,8 @@ namespace SuperSuper.Controllers
             Diet = false,
             Kosher = true,
             Price = 25.90,
-            Supplier = "Shupersal"
+            Supplier = "Shupersal",
+            
         };
 
         Product p5 = new Product
@@ -143,6 +144,10 @@ namespace SuperSuper.Controllers
                 result = result.Where(x => x.Diet == true);
             }
 
+            if (category != Product.Category.All)
+            {
+                result = result.Where(x => x.category.Equals(category));
+            }
             return View(await result.ToListAsync());
         }
 

@@ -10,7 +10,7 @@
     @using (Html.BeginForm("Index", "Products", FormMethod.Post))
     {
         <label>Search a product:</label> <br />
-        <label for="Category">Category</label> @Html.DropDownList("EnumDropDown", ViewBag.EnumList as SelectList)
+        <label for="Category">Category</label> @Html.DropDownList("category", ViewBag.EnumList as SelectList)
         <label><input id="input-h" type="checkbox" name="Diet" value="true" style="width:20px;">Diet </label>
         <input id="input-h" type="search" name="productName" maxlength="20" placeholder="product Name" style="width:105px;">
         <input id="btn-filter" type="submit" value="Search">

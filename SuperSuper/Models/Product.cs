@@ -11,18 +11,7 @@ namespace SuperSuper.Models
 
 		public string Name { get; set; }
 
-		public enum Category
-		{
-			Dairy,
-			Vegetables,
-			Fruits,
-			Drinks,
-			Toiltries,
-			Snacks,
-			Frozen,
-			Cupboard
-		}
-
+        
 		public double Price { get; set; }
 
 		public bool Diet { get; set; }
@@ -31,5 +20,21 @@ namespace SuperSuper.Models
 
         public bool Kosher { get; set; }
 
-	}
+        public Category category { get; set; }
+
+        public enum Category
+        {
+            All,
+            Dairy,
+            Vegetables,
+            Fruits,
+            Drinks,
+            Toiltries,
+            Snacks,
+            Frozen,
+            Cupboard
+        }
+    }
+    
+
 }

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuperSuper.Models;
 
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    partial class SuperSuperContextModelSnapshot : ModelSnapshot
+    [Migration("20181027133345_categoryProp")]
+    partial class categoryProp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
