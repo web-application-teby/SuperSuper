@@ -121,6 +121,14 @@ namespace SuperSuper.Controllers
         {
             //var result = from t in _context.Product select t;
 
+            var enumData = from Product.Category e in Enum.GetValues(typeof(Product.Category))
+                           select new
+                           {
+                               Category = e,
+                           };
+            ViewBag.EnumList = new SelectList(enumData, "Category", "Category");
+
+
             var result = from row in _context.Product
                          group row by row.Name into grp
                          select grp.OrderBy(a => a.Price).First();
@@ -142,6 +150,13 @@ namespace SuperSuper.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+            var enumData = from Product.Category e in Enum.GetValues(typeof(Product.Category))
+                           select new
+                           {
+                               Category = e,
+                           };
+            ViewBag.EnumList = new SelectList(enumData, "Category", "Category");
+
             var result = from row in _context.Product
                          group row by row.Name into grp
                          select grp.OrderBy(a => a.Price).First();
@@ -171,6 +186,14 @@ namespace SuperSuper.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            var enumData = from Product.Category e in Enum.GetValues(typeof(Product.Category))
+                           select new
+                           {
+                               Category = e,
+                           };
+            ViewBag.EnumList = new SelectList(enumData, "Category", "Category");
+
+
             return View();
         }
 
@@ -181,6 +204,7 @@ namespace SuperSuper.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Price,Diet,Supplier")] Product product)
         {
+            
             if (ModelState.IsValid)
             {
                 _context.Add(product);
