@@ -10,8 +10,8 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181027133345_categoryProp")]
-    partial class categoryProp
+    [Migration("20181027140513_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

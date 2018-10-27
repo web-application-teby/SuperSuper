@@ -48,7 +48,8 @@ namespace SuperSuper.Migrations
                     Price = table.Column<double>(nullable: false),
                     Diet = table.Column<bool>(nullable: false),
                     Supplier = table.Column<string>(nullable: true),
-                    Kosher = table.Column<bool>(nullable: false)
+                    Kosher = table.Column<bool>(nullable: false),
+                    category = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

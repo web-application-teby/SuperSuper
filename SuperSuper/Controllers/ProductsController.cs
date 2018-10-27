@@ -15,29 +15,52 @@ namespace SuperSuper.Controllers
 
         Product p1 = new Product
         {
-            Name = "Milk",
+            Name = "Milk 3% Tnuva",
             Diet = false,
             Kosher = true,
+            Price = 5.80,
+            Supplier = "Shupersal",
+            category = Product.Category.Dairy
+        };
+
+        Product p7 = new Product
+        {
+            Name = "Milk 1% Tnuva",
+            Diet = true,
+            Kosher = true,
             Price = 5.90,
-            Supplier = "Shupersal"
+            Supplier = "Shupersal",
+            category = Product.Category.Dairy
+        };
+
+        Product p8 = new Product
+        {
+            Name = "Bamba Osem",
+            Diet = true,
+            Kosher = true,
+            Price = 3.50,
+            Supplier = "Tiv Taam",
+            category = Product.Category.Snacks
         };
 
         Product p2 = new Product
         {
-            Name = "Milk",
+            Name = "Milk 2% Tnuva",
             Diet = false,
             Kosher = true,
             Price = 6.10,
-            Supplier = "Super Yehuda"
+            Supplier = "Super Yehuda",
+            category = Product.Category.Dairy
         };
 
         Product p3 = new Product
         {
-            Name = "Milk",
+            Name = "Milk 2% Tnuva",
             Diet = false,
             Kosher = true,
             Price = 6.30,
-            Supplier = "Tiv Taam"
+            Supplier = "Tiv Taam",
+            category = Product.Category.Dairy
         };
 
         Product p4 = new Product
@@ -47,7 +70,7 @@ namespace SuperSuper.Controllers
             Kosher = true,
             Price = 25.90,
             Supplier = "Shupersal",
-            
+            category = Product.Category.Cupboard
         };
 
         Product p5 = new Product
@@ -56,7 +79,8 @@ namespace SuperSuper.Controllers
             Diet = false,
             Kosher = true,
             Price = 16.10,
-            Supplier = "Super Yehuda"
+            Supplier = "Super Yehuda",
+            category = Product.Category.Cupboard
         };
 
         Product p6 = new Product
@@ -65,8 +89,20 @@ namespace SuperSuper.Controllers
             Diet = false,
             Kosher = true,
             Price = 16.30,
-            Supplier = "Tiv Taam"
+            Supplier = "Tiv Taam",
+            category = Product.Category.Cupboard
         };
+
+        Product p9 = new Product
+        {
+            Name = "Bamba Osem",
+            Diet = false,
+            Kosher = true,
+            Price = 6.30,
+            Supplier = "Tiv Taam",
+            category = Product.Category.Snacks
+        };
+
         public ProductsController(SuperSuperContext context)
         {
             _context = context;
@@ -76,6 +112,9 @@ namespace SuperSuper.Controllers
             _context.Add(p4);
             _context.Add(p5);
             _context.Add(p6);
+            _context.Add(p7);
+            _context.Add(p8);
+            _context.Add(p9);
             _context.SaveChanges();
         }
 
