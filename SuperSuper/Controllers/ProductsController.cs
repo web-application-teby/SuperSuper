@@ -120,18 +120,19 @@ namespace SuperSuper.Controllers
         public async Task<IActionResult> Index(Product.Category category, bool fat, string productName)
         {
             //var result = from t in _context.Product select t;
+
             var result = from row in _context.Product
-            group row by row.Name into grp
-            select grp.OrderBy(a => a.Price).First();
+                         group row by row.Name into grp
+                         select grp.OrderBy(a => a.Price).First();
 
             if (!string.IsNullOrEmpty(productName))
             {
-                result = result.Where(x => x.Name == productName);
+                result = result.Where(x => x.Name.Contains(productName));
             }
 
-            if (!fat)
+            if (fat == true)
             {
-                result = result.Where(x => x.Fat == false);
+                result = result.Where(x => x.Fat == true);
             }
 
             return View(await result.ToListAsync());
