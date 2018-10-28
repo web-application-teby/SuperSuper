@@ -172,3 +172,5 @@ C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\S
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.dll
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CopyComplete
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs

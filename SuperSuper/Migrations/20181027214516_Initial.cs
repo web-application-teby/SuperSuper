@@ -39,6 +39,18 @@ namespace SuperSuper.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CustomerBasket",
+                columns: table => new
+                {
+                    ProductName = table.Column<string>(nullable: false),
+                    ProductsCount = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerBasket", x => x.ProductName);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
@@ -54,6 +66,24 @@ namespace SuperSuper.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PurchesesView",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ProductName = table.Column<string>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
+                    CustomerName = table.Column<string>(nullable: true),
+                    CustomerId = table.Column<int>(nullable: false),
+                    PurchesDate = table.Column<DateTime>(nullable: false),
+                    Purchesed = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PurchesesView", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -78,8 +108,8 @@ namespace SuperSuper.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductId = table.Column<int>(nullable: true),
-                    CustomerId = table.Column<int>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
+                    CustomerId = table.Column<int>(nullable: false),
                     PurchesDate = table.Column<DateTime>(nullable: false),
                     Purchesed = table.Column<bool>(nullable: false)
                 },
@@ -91,13 +121,13 @@ namespace SuperSuper.Migrations
                         column: x => x.CustomerId,
                         principalTable: "Customer",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Purcheses_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -117,7 +147,13 @@ namespace SuperSuper.Migrations
                 name: "Admin");
 
             migrationBuilder.DropTable(
+                name: "CustomerBasket");
+
+            migrationBuilder.DropTable(
                 name: "Purcheses");
+
+            migrationBuilder.DropTable(
+                name: "PurchesesView");
 
             migrationBuilder.DropTable(
                 name: "SuperUser");

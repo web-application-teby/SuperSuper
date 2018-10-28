@@ -10,7 +10,6 @@ namespace SuperSuper.Models
 		public int Id { get; set; }
 
 		public string Name { get; set; }
-
         
 		public double Price { get; set; }
 
@@ -34,6 +33,8 @@ namespace SuperSuper.Models
             Frozen,
             Cupboard
         }
+
+        public ICollection<Purcheses> Purcheses { get; set; }
     }
     
 
