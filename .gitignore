@@ -45,3 +45,8 @@ SuperSuper/obj/Debug/netcoreapp2.1/SuperSuper.Views.pdb
 SuperSuper/obj/project.assets.json
 SuperSuper/obj/SuperSuper.csproj.nuget.cache
 SuperSuper/obj/SuperSuper.csproj.nuget.g.props
+.vs/SuperSuper/v15/.suo
+SuperSuper/bin/Debug/netcoreapp2.1/SuperSuper.dll
+SuperSuper/bin/Debug/netcoreapp2.1/SuperSuper.pdb
+SuperSuper/obj/Debug/netcoreapp2.1/SuperSuper.dll
+SuperSuper/obj/Debug/netcoreapp2.1/SuperSuper.pdb
