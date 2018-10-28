@@ -53,6 +53,18 @@ namespace SuperSuper.Migrations
                     b.ToTable("Customer");
                 });
 
+            modelBuilder.Entity("SuperSuper.Models.CustomerBasket", b =>
+                {
+                    b.Property<string>("ProductName")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ProductsCount");
+
+                    b.HasKey("ProductName");
+
+                    b.ToTable("CustomerBasket");
+                });
+
             modelBuilder.Entity("SuperSuper.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -82,9 +94,9 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CustomerId");
+                    b.Property<int>("CustomerId");
 
-                    b.Property<int?>("ProductId");
+                    b.Property<int>("ProductId");
 
                     b.Property<DateTime>("PurchesDate");
 
@@ -97,6 +109,29 @@ namespace SuperSuper.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("Purcheses");
+                });
+
+            modelBuilder.Entity("SuperSuper.Models.PurchesesView", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CustomerId");
+
+                    b.Property<string>("CustomerName");
+
+                    b.Property<int>("ProductId");
+
+                    b.Property<string>("ProductName");
+
+                    b.Property<DateTime>("PurchesDate");
+
+                    b.Property<bool>("Purchesed");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PurchesesView");
                 });
 
             modelBuilder.Entity("SuperSuper.Models.SuperUser", b =>
@@ -121,12 +156,14 @@ namespace SuperSuper.Migrations
             modelBuilder.Entity("SuperSuper.Models.Purcheses", b =>
                 {
                     b.HasOne("SuperSuper.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
+                        .WithMany("Purcheses")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SuperSuper.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
+                        .WithMany("Purcheses")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

@@ -23,6 +23,6 @@ namespace SuperSuper.Models
         //[DataType(System.ComponentModel.DataAnnotations.DataType.Password)]
         public string Password { get; set; }
 
-        //public List<Product> CustomerBucket{ get; set; }
+        public ICollection<Purcheses> Purcheses { get; set; }
     }
 }

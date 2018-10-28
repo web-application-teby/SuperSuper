@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 
 namespace SuperSuper.Models
 {
-	public class Purcheses
-	{
+    public class PurchesesView
+    {
+        public int Id { get; set; }
 
-		public int Id { get; set; }
-
-		public Product Product { get; set; }
+        public string ProductName { get; set; }
 
         public int ProductId { get; set; }
 
-        public Customer Customer { get; set; }
+        public string CustomerName { get; set; }
 
         public int CustomerId { get; set; }
 
@@ -22,6 +21,5 @@ namespace SuperSuper.Models
 
         public bool Purchesed { get; set; }
     }
- }
-
+}
 
