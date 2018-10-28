@@ -2,48 +2,41 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/vegetables.jpg" alt="welcome" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-
-                <p>
-
-                    <h1>
-                        <b>
-                            Welcome to Super-Super
-                        </b>
-                    </h1>
 
 
-                </p>
-                <p>
-                    <b>
-                        Super-Super is the leading retail chain in Israel. Its goal is to provide a quality and varied response to all its customers, rewarding employment for its employees and fair conduct with its various suppliers. Our company guarantees you the cheapest shopping basket you can get from a variety of famous companies in Israel. The satisfaction of customers, employees and suppliers is one of the cornerstones on which the company is based. The company's ongoing conduct is aimed at constantly improving this value.
-                    </b>
-                </p>
+<marquee behavior="scroll" direction="up" style="height:200px;">מבצעי השבוע</marquee>
+
+
+
+<section id="intro">
+    <div>
+        <div class="video-container">
+            <div class="title-container">
+                <div class="headline">
+                    <h1>Welcome to Super-Super</h1>
+
+                </div>
+                <div class="description">
+                    <div class="inner">
+
+                        Super-Super is the leading retail chain in Israel.
+                        Its goal is to provide a quality and varied response to all its customers, rewarding employment for its employees and fair conduct with its various suppliers.
+                        Our company guarantees you the cheapest shopping basket you can get from a variety of famous companies in Israel.
+                        The satisfaction of customers, employees and suppliers is one of the cornerstones on which the company is based.
+                        The company's ongoing conduct is aimed at constantly improving this value.
+
+
+                    </div>
+                </div>
             </div>
-        </div>
-
-
-
-        <div class="row">
-
-
-
+            <div class="filter"></div>
+            <video autoplay loop class="fillWidth">
+                <source src="~/images/videoplayback.mp4" type="video/webm">
+            </video>
 
         </div>
+    </div>
 
-      
 
-    
-
-      
 
     </div>
