@@ -188,7 +188,7 @@ namespace SuperSuper.Controllers
                  ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
                      "\n" + "we are glad you chose to be part of SuperSuper family";
              } */
-            return View();
+            return RedirectToAction("Index", "Prusheses");
 
         }
 
@@ -210,7 +210,7 @@ namespace SuperSuper.Controllers
                 //save userName to the session
                 HttpContext.Session.SetString("userName", ctm.UserName.ToString());
 
-                return RedirectToAction("loggedin");
+                return RedirectToAction("Index", "Prusheses");
             }
             else
             {

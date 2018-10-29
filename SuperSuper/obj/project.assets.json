@@ -12226,11 +12226,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bmanor\\Documents\\GitHub\\SuperSuper\\SuperSuper\\SuperSuper.csproj",
+      "projectUniqueName": "C:\\Users\\bmanor\\Desktop\\Bar\\CS\\פיתוח אפליקציות אינטרנטיות\\SuperSuper\\SuperSuper\\SuperSuper.csproj",
       "projectName": "SuperSuper",
-      "projectPath": "C:\\Users\\bmanor\\Documents\\GitHub\\SuperSuper\\SuperSuper\\SuperSuper.csproj",
+      "projectPath": "C:\\Users\\bmanor\\Desktop\\Bar\\CS\\פיתוח אפליקציות אינטרנטיות\\SuperSuper\\SuperSuper\\SuperSuper.csproj",
       "packagesPath": "C:\\Users\\bmanor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bmanor\\Documents\\GitHub\\SuperSuper\\SuperSuper\\obj\\",
+      "outputPath": "C:\\Users\\bmanor\\Desktop\\Bar\\CS\\פיתוח אפליקציות אינטרנטיות\\SuperSuper\\SuperSuper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

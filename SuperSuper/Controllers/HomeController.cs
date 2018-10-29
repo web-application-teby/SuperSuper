@@ -15,7 +15,20 @@ namespace SuperSuper.Controllers
 			return View();
 		}
 
-		public IActionResult Product()
+        public IActionResult register()
+        {
+           
+            return View("~/Views/Customers/register.cshtml");
+            //return View();
+        }
+
+        public IActionResult login()
+        {
+            return View("~/Views/Customers/login.cshtml");
+            //return View();
+        }
+
+        public IActionResult Product()
 		{
 			ViewData["Message"] = "Your Products page.";
 

@@ -10,7 +10,7 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181027140513_Initial")]
+    [Migration("20181029192743_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,13 +42,19 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address");
+                    b.Property<string>("Address")
+                        .IsRequired();
 
-                    b.Property<string>("EmailAdress");
+                    b.Property<string>("EmailAddress")
+                        .IsRequired();
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired();
 
-                    b.Property<string>("UserName");
+                    b.Property<string>("UserName")
+                        .IsRequired();
+
+                    b.Property<string>("confirmPassword");
 
                     b.HasKey("Id");
 
@@ -109,7 +115,7 @@ namespace SuperSuper.Migrations
 
                     b.Property<string>("Address");
 
-                    b.Property<string>("EmailAdress");
+                    b.Property<string>("EmailAddress");
 
                     b.Property<string>("Password");
 

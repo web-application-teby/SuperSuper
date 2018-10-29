@@ -28,10 +28,11 @@ namespace SuperSuper.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserName = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true),
-                    EmailAdress = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true)
+                    UserName = table.Column<string>(nullable: false),
+                    Address = table.Column<string>(nullable: false),
+                    EmailAddress = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    confirmPassword = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,7 +65,7 @@ namespace SuperSuper.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserName = table.Column<int>(nullable: false),
                     Address = table.Column<string>(nullable: true),
-                    EmailAdress = table.Column<string>(nullable: true),
+                    EmailAddress = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

@@ -20,7 +20,7 @@ namespace SuperSuper.Models
 
         [Required(ErrorMessage = "Address is required")]
         [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "E-mail is not valid")]
-        public string EmailAdress { get; set; }
+        public string EmailAddress { get; set; }
 
         [Required(ErrorMessage = "Address is required")]
         [DataType(DataType.Password)]
