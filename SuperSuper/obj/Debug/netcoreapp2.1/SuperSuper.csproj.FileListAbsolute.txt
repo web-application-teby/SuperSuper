@@ -305,3 +305,6 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor
 >>>>>>> master
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csprojAssemblyReference.cache
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
