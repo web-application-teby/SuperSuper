@@ -18,11 +18,14 @@ body {
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
+    position: center
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
     width: 100%;
+    position: center
+
 }
 
 /* QR code generator */
@@ -38,3 +41,7 @@ body {
     }
 }
 
+text {
+    text-align: center;
+    position:center;
+}
