@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperSuper.Models;
+using Microsoft.AspNetCore.Http;
+
+
 
 namespace SuperSuper.Controllers
 {
@@ -18,11 +21,13 @@ namespace SuperSuper.Controllers
             _context = context;
         }
 
+
         // GET: Customers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Customer.ToListAsync());
         }
+
 
         // GET: Customers/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -148,5 +153,85 @@ namespace SuperSuper.Controllers
         {
             return _context.Customer.Any(e => e.Id == id);
         }
+
+
+        //register (get)
+        public ActionResult register()
+        {
+            return View();
+
+        }
+
+        //register (set)
+        [HttpPost]
+        public ActionResult register(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Customer.Add(customer);
+                _context.SaveChanges();
+            }
+
+            ModelState.Clear();
+            ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
+            "\n" + "we are glad you chose to be part of SuperSuper family";
+
+            /* if (ModelState.IsValid)
+             {
+                 using (DBCustomers db = new DBCustomers())
+                 {
+                     db.userAcounts.Add(customer);
+                     db.SaveChanges();
+                 }
+
+                 ModelState.Clear();
+                 ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
+                     "\n" + "we are glad you chose to be part of SuperSuper family";
+             } */
+            return RedirectToAction("Index", "Prusheses");
+
+        }
+
+        //login (get)
+        public ActionResult login()
+        {
+            return View();
+        }
+
+        //login (set)
+        [HttpPost]
+        public ActionResult login(Customer customer)
+        {
+            var ctm = _context.Customer.Single(u => u.UserName == customer.UserName && u.Password == customer.Password);
+            if (ctm != null)
+            {
+                //save id to the session
+                HttpContext.Session.SetString("id", ctm.Id.ToString());
+                //save userName to the session
+                HttpContext.Session.SetString("userName", ctm.UserName.ToString());
+
+                return RedirectToAction("Index", "Prusheses");
+            }
+            else
+            {
+                ModelState.AddModelError("", "UserName or Password is wrong");
+            }
+
+            return View();
+        }
+
+        public ActionResult loggedin()
+        {
+            if (HttpContext.Session.GetString("id") != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("login");
+            }
+        }
+
     }
+
 }

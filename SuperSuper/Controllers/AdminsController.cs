@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperSuper.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace SuperSuper.Controllers
 {
@@ -148,5 +149,34 @@ namespace SuperSuper.Controllers
         {
             return _context.Admin.Any(e => e.Id == id);
         }
+
+        //login (get)
+        public ActionResult adminLogin()
+        {
+            return View();
+        }
+
+        //login (set)
+        [HttpPost]
+        public ActionResult adminLogin(Admin admin)
+        {
+            var ctm = _context.Admin.Single(u => u.Name == admin.Name && u.Password == admin.Password);
+            if (ctm != null)
+            {
+                //save id to the session
+                HttpContext.Session.SetString("id", ctm.Id.ToString());
+                //save userName to the session
+                HttpContext.Session.SetString("Name", ctm.Name.ToString());
+
+                return RedirectToAction("Index", "Admins");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Name or Password is wrong");
+            }
+
+            return View();
+        }
+
     }
 }

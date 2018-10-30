@@ -15,7 +15,28 @@ namespace SuperSuper.Controllers
 			return View();
 		}
 
-		public IActionResult Product()
+        public IActionResult register()
+        {
+           
+            return View("~/Views/Customers/register.cshtml");
+            //return View();
+        }
+
+        public IActionResult login()
+        {
+            return View("~/Views/Customers/login.cshtml");
+            //return View("~/Views/User/chooseUserType.cshtml");
+            //return View();
+        }
+
+        public IActionResult adminLogin()
+        {
+            return View("~/Views/Admins/adminLogin.cshtml");
+            //return View("~/Views/User/chooseUserType.cshtml");
+            //return View();
+        }
+
+        public IActionResult Product()
 		{
 			ViewData["Message"] = "Your Products page.";
 
@@ -31,8 +52,6 @@ namespace SuperSuper.Controllers
 
         public IActionResult Contact()
         {
-          
-      
             return View();
         }
 

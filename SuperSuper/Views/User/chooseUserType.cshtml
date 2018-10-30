@@ -1,0 +1,36 @@
+﻿@model SuperSuper.Models.User
+
+@{
+    ViewData["Title"] = "chooseUserType";
+}
+
+
+<head>
+    <script type="text/javascript" src="~/lib/JQuary.js"></script>
+</head>
+
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="chooseUserType">
+           
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                
+                <h1>choose your user type</h1>
+
+                <button type="button" class="btn btn-primary btn-lg">SuperUser</button>
+                <button type="button" class="btn btn-primary btn-lg">Customer</button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
+    <head>
+        <script type="text/javascript" src="~/lib/JQuary.js"></script>
+    </head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SuperSuper</title>
@@ -30,18 +35,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">SuperSuper</a>
+                <div>
+                    <a href="/Home"> 
+                    <input type="image" id="myimage" style="height:65px;width:65px;" src="~/images/logo2.png"
+                    asp-area ="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    </a>    
+                 </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Purcheses", "Index", "Purcheses")</li>
-                    <li>@Html.ActionLink("Buy Now!", "Index", "Products")</li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Map">Map</a></li>
-                </ul>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Purcheses", "Index", "Purcheses", "Register", "Log in")</li>
+                        <li>@Html.ActionLink("Buy Now!", "Index", "Products")</li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Map">Our Stores</a></li>
+                        @*<li><a asp-area="" asp-controller="Home" asp-action="Register">Register</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Login">Log in</a></li>*@
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="glyphicon glyphicon-user"
+                               asp-area="" asp-controller="Home" asp-action="Register">
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a class="glyphicon glyphicon-log-in"
+                               asp-area="" asp-controller="Home" asp-action="Login">
+                                Log in
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
     </nav>
+
 
     <partial name="_CookieConsentPartial" />
 
@@ -49,6 +76,7 @@
         @RenderBody()
         <hr />
         <footer>
+            <a href="/Home/adminLogin" button type="button" class="btn btn-warning">Admin</a></button>
             <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button_count&size=large&mobile_iframe=false&appId=562620534169800&width=106&height=28" width="106" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             <p>&copy; 2018 - SuperSuper by Evgeniy, Yarden, Bar & Talia</p>
         </footer>
@@ -76,5 +104,6 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

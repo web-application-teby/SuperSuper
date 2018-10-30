@@ -1,0 +1,79 @@
+﻿@model SuperSuper.Models.Customer
+
+@{
+    ViewData["Title"] = "register";
+}
+
+<head>
+
+   *<script type="text/javascript" src="~/lib/JQuary.js"></script>
+
+    <script>
+            $(document).ready(function () {
+                $("#register").click(function () {
+                    $(".row .from-group .alert alert-success").hide();
+                });
+                $("#register").click(function () {
+                    $(".row .from-group .alert alert-success").show();
+                });
+            });
+        </script>
+
+</head>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="confirmPassword" class="control-label"></label>
+                <input asp-for="confirmPassword" class="form-control" />
+                <span asp-validation-for="confirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <button id="register">
+                    <input type="submit" value="Register" class="btn btn-default" />
+                </button>
+
+                <div class="alert alert-success">
+                 @*dont forget to add the user name after welcome*@
+                            <div><strong>Welcome!</strong></div>
+                            <div>We are glad you chose to be part of SuperSuper family</div>
+                            <div><a href="/Products" class="alert-link">Create your first SuperSuper purchase</a></div>
+                 </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+
+
+
