@@ -176,18 +176,6 @@ namespace SuperSuper.Controllers
             ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
             "\n" + "we are glad you chose to be part of SuperSuper family";
 
-            /* if (ModelState.IsValid)
-             {
-                 using (DBCustomers db = new DBCustomers())
-                 {
-                     db.userAcounts.Add(customer);
-                     db.SaveChanges();
-                 }
-
-                 ModelState.Clear();
-                 ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
-                     "\n" + "we are glad you chose to be part of SuperSuper family";
-             } */
             return RedirectToAction("Index", "Prusheses");
 
         }
