@@ -19,46 +19,6 @@ namespace SuperSuper.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SuperSuper.Models.Admin", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Password");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Admin");
-                });
-
-            modelBuilder.Entity("SuperSuper.Models.Customer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .IsRequired();
-
-                    b.Property<string>("EmailAdress")
-                        .IsRequired();
-
-                    b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.Property<string>("UserName")
-                        .IsRequired();
-
-                    b.Property<string>("confirmPassword");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Customer");
-                });
-
             modelBuilder.Entity("SuperSuper.Models.CustomerBasket", b =>
                 {
                     b.Property<string>("ProductName")
@@ -157,6 +117,61 @@ namespace SuperSuper.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SuperUser");
+                });
+
+            modelBuilder.Entity("SuperSuper.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
+                    b.Property<string>("UserType");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
+                });
+
+            modelBuilder.Entity("SuperSuper.Models.Admin", b =>
+                {
+                    b.HasBaseType("SuperSuper.Models.User");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Password");
+
+                    b.ToTable("Admin");
+
+                    b.HasDiscriminator().HasValue("Admin");
+                });
+
+            modelBuilder.Entity("SuperSuper.Models.Customer", b =>
+                {
+                    b.HasBaseType("SuperSuper.Models.User");
+
+                    b.Property<string>("Address")
+                        .IsRequired();
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnName("Customer_Password");
+
+                    b.Property<string>("UserName")
+                        .IsRequired();
+
+                    b.Property<string>("confirmPassword");
+
+                    b.ToTable("Customer");
+
+                    b.HasDiscriminator().HasValue("Customer");
                 });
 
             modelBuilder.Entity("SuperSuper.Models.Purcheses", b =>
