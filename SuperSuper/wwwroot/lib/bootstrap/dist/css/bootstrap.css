@@ -4,13 +4,19 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+
+
+
 html {
-  font-family: sans-serif;
+  font-family: Calibri;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    background-size: cover;
+    background-image: url("../../../../images/background.jpg");
+    font-family: Calibri;
 }
 article,
 aside,
@@ -105,7 +111,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: Calibri;
   font-size: 1em;
 }
 button,
@@ -1092,7 +1098,7 @@ input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: Calibri;
   font-size: inherit;
   line-height: inherit;
 }
@@ -1183,7 +1189,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: Calibri;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -1531,7 +1537,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Calibri;
 }
 code {
   padding: 2px 4px;
@@ -4589,8 +4595,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
-  border-color: #080808;
+  background-color: black;
+  border-color: black;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -5990,7 +5996,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Calibri;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;
@@ -6109,7 +6115,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Calibri;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -6378,7 +6384,7 @@ button.close {
 .carousel-control .icon-next {
   width: 20px;
   height: 20px;
-  font-family: serif;
+  font-family: Calibri;
   line-height: 1;
 }
 .carousel-control .icon-prev:before {

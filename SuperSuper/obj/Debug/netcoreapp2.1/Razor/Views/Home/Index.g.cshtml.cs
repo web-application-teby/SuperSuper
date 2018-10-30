@@ -84,7 +84,7 @@ using SuperSuper.Models;
             WriteLiteral("nstantly improving this value.\r\n\r\n\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"filter\"></div>\r\n            <video autoplay loop class=\"fillWidth\">\r\n                ");
             EndContext();
             BeginContext(1286, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("source", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "95ff804f73ca4940814f7e4bc35c0682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("source", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "0e622e673c8542bc801b57f41f6c7777", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
