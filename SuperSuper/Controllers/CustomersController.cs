@@ -162,7 +162,7 @@ namespace SuperSuper.Controllers
 
         }
 
-        //register (set)
+        //register (post)
         [HttpPost]
         public ActionResult register(Customer customer)
         {
@@ -188,7 +188,7 @@ namespace SuperSuper.Controllers
                  ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
                      "\n" + "we are glad you chose to be part of SuperSuper family";
              } */
-            return RedirectToAction("Index", "Prusheses");
+            return RedirectToAction("Index", "Purcheses");
 
         }
 
@@ -202,15 +202,16 @@ namespace SuperSuper.Controllers
         [HttpPost]
         public ActionResult login(Customer customer)
         {
-            var ctm = _context.Customer.Single(u => u.UserName == customer.UserName && u.Password == customer.Password);
+            var ctm = _context.Customer.Single(u => (u.UserName.Equals(customer.UserName) && u.Password.Equals(customer.Password)));
             if (ctm != null)
             {
                 //save id to the session
-                HttpContext.Session.SetString("id", ctm.Id.ToString());
+                HttpContext.Session.SetInt32("customerid", ctm.Id);
+                
                 //save userName to the session
                 HttpContext.Session.SetString("userName", ctm.UserName.ToString());
 
-                return RedirectToAction("Index", "Prusheses");
+                return RedirectToAction("Index", "Products");
             }
             else
             {

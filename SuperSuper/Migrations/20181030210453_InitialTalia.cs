@@ -4,10 +4,41 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SuperSuper.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialTalia : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Admin",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Admin", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customer",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserName = table.Column<string>(nullable: false),
+                    Address = table.Column<string>(nullable: false),
+                    EmailAddress = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false),
+                    confirmPassword = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customer", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "CustomerBasket",
                 columns: table => new
@@ -78,15 +109,7 @@ namespace SuperSuper.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserType = table.Column<string>(nullable: true),
-                    Discriminator = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true),
-                    UserName = table.Column<string>(nullable: true),
-                    Address = table.Column<string>(nullable: true),
-                    EmailAddress = table.Column<string>(nullable: true),
-                    Customer_Password = table.Column<string>(nullable: true),
-                    confirmPassword = table.Column<string>(nullable: true)
+                    UserType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -108,9 +131,9 @@ namespace SuperSuper.Migrations
                 {
                     table.PrimaryKey("PK_Purcheses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Purcheses_User_CustomerId",
+                        name: "FK_Purcheses_Customer_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "User",
+                        principalTable: "Customer",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -135,6 +158,9 @@ namespace SuperSuper.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Admin");
+
+            migrationBuilder.DropTable(
                 name: "CustomerBasket");
 
             migrationBuilder.DropTable(
@@ -148,6 +174,9 @@ namespace SuperSuper.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Customer");
 
             migrationBuilder.DropTable(
                 name: "Product");

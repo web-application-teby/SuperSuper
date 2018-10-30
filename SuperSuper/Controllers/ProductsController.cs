@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -121,12 +122,14 @@ namespace SuperSuper.Controllers
 
         public async Task<IActionResult> Add(int? id)
         {
-            Customer c = new Customer
+            int customerId = (int)HttpContext.Session.GetInt32("customerid");
+
+            var customer = await _context.Customer
+                .FirstOrDefaultAsync(cu => cu.Id == customerId);
+            if (customer == null)
             {
-                UserName = "aa"
-            };
-            _context.Add(c);
-            _context.SaveChanges();
+                return NotFound();
+            }
 
             if (id == null)
             {
@@ -143,7 +146,7 @@ namespace SuperSuper.Controllers
             Purcheses p = new Purcheses
             {
                 Product = product,
-                Customer = c,
+                Customer = customer,
                 PurchesDate = DateTime.Now,
                 Purchesed = false
             };

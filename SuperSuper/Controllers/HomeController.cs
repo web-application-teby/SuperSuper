@@ -17,21 +17,24 @@ namespace SuperSuper.Controllers
 
         public IActionResult register()
         {
-           
-            return View("~/Views/Customers/register.cshtml");
+
+            return RedirectToAction("register", "Customers");
+            //return View("~/Views/Customers/register.cshtml");
             //return View();
         }
 
         public IActionResult login()
         {
-            return View("~/Views/Customers/login.cshtml");
+            return RedirectToAction("login", "Customers");
+            //return View("~/Views/Customers/login.cshtml");
             //return View("~/Views/User/chooseUserType.cshtml");
             //return View();
         }
 
         public IActionResult adminLogin()
         {
-            return View("~/Views/Admins/adminLogin.cshtml");
+            return RedirectToAction("adminLogin", "Customers");
+            //return View("~/Views/Admins/adminLogin.cshtml");
             //return View("~/Views/User/chooseUserType.cshtml");
             //return View();
         }

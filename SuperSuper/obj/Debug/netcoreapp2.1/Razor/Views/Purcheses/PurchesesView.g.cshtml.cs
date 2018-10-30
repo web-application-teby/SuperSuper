@@ -106,7 +106,7 @@ Write(ViewData["Title"]);
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(716, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "55f485d817834347be758606f49821b4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91fd2191485b406d960768331078784b", async() => {
                 BeginContext(761, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -141,7 +141,7 @@ Write(ViewData["Title"]);
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(789, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ca679f768984be1b8f0dd6d5ab2e78e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0cab01b58ec341d4b548c321857de885", async() => {
                 BeginContext(837, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -176,7 +176,7 @@ Write(ViewData["Title"]);
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(868, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6783cc0855664f2d8d4655c194d54c8f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97da99052a364ddbbbd7deab6c91d5cf", async() => {
                 BeginContext(915, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

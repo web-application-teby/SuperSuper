@@ -65,7 +65,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n<h2>CustomerBasket</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(144, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "531eeee5ba6f4d6ca9710f71b1635100", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a80eccf5a1db424cbd2cc04ebcc7dbf7", async() => {
                 BeginContext(167, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -135,7 +135,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(798, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ddea452c39444ccb9deca192ca1975f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8dd1f54bf7804c99b2e48b03e31b0dcc", async() => {
                 BeginContext(855, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -170,7 +170,7 @@ using SuperSuper.Models;
             WriteLiteral(" |\r\n                ");
             EndContext();
             BeginContext(886, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c881220d84054ffb8b8a30ca5dacd3d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b2271b6a71b447ffa9bdf9f396c6b822", async() => {
                 BeginContext(942, 6, true);
                 WriteLiteral("Delete");
                 EndContext();
