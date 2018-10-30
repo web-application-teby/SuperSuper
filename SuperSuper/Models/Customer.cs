@@ -30,6 +30,6 @@ namespace SuperSuper.Models
         [DataType(DataType.Password)]
         public string confirmPassword { get; set; }
 
-        //public List<Product> CustomerBucket{ get; set; }
+        public ICollection<Purcheses> Purcheses { get; set; }
     }
 }

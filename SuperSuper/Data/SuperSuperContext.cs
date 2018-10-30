@@ -25,5 +25,9 @@ namespace SuperSuper.Models
         public DbSet<SuperSuper.Models.SuperUser> SuperUser { get; set; }
 
         public DbSet<SuperSuper.Models.User> User { get; set; }
+        
+        public DbSet<SuperSuper.Models.PurchesesView> PurchesesView { get; set; }
+
+        public DbSet<SuperSuper.Models.CustomerBasket> CustomerBasket { get; set; }
     }
 }

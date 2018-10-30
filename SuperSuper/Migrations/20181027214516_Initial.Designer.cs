@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuperSuper.Models;
 
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    partial class SuperSuperContextModelSnapshot : ModelSnapshot
+    [Migration("20181027214516_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,19 +42,13 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
-                        .IsRequired();
+                    b.Property<string>("Address");
 
-                    b.Property<string>("EmailAdress")
-                        .IsRequired();
+                    b.Property<string>("EmailAdress");
 
-                    b.Property<string>("Password")
-                        .IsRequired();
+                    b.Property<string>("Password");
 
-                    b.Property<string>("UserName")
-                        .IsRequired();
-
-                    b.Property<string>("confirmPassword");
+                    b.Property<string>("UserName");
 
                     b.HasKey("Id");
 

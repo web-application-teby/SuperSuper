@@ -172,6 +172,7 @@ C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\S
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.dll
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\Yarden\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\bmanor\Documents\GitHub\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.deps.json
 C:\Users\bmanor\Documents\GitHub\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.runtimeconfig.json
 C:\Users\bmanor\Documents\GitHub\SuperSuper\SuperSuper\bin\Debug\netcoreapp2.1\SuperSuper.runtimeconfig.dev.json
@@ -298,3 +299,7 @@ C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\R
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\register.g.cshtml.cs
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\User\chooseUserType.g.cshtml.cs
+=======
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
+>>>>>>> master

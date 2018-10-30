@@ -151,7 +151,8 @@ namespace SuperSuper.Controllers
             _context.Purcheses.Add(p);
             _context.SaveChanges();
 
-            return View("Details", product);
+            TempData["Message"] = "Product " + product.Name + " was added to your basket";
+            return RedirectToAction("Index");
         }
 
         // Post: Products search
@@ -190,7 +191,6 @@ namespace SuperSuper.Controllers
             return View(await result.ToListAsync());
         }
 
-        
         // GET: Products
         public async Task<IActionResult> Index()
         {
