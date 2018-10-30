@@ -254,9 +254,13 @@ C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיו�
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\Details.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\Edit.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\Index.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\loggedin.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\login.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\register.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\Map.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Products\Create.g.cshtml.cs
@@ -278,6 +282,7 @@ C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיו�
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\SuperUsers\Details.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\SuperUsers\Edit.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\SuperUsers\Index.g.cshtml.cs
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\User\chooseUserType.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.RazorTargetAssemblyInfo.cache
@@ -286,8 +291,4 @@ C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיו�
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.dll
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CopyComplete
-C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
-C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\register.g.cshtml.cs
-C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\login.g.cshtml.cs
-C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\loggedin.g.cshtml.cs
-C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csprojAssemblyReference.cache
+C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\adminLogin.g.cshtml.cs

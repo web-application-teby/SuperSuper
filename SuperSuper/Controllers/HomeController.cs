@@ -25,6 +25,14 @@ namespace SuperSuper.Controllers
         public IActionResult login()
         {
             return View("~/Views/Customers/login.cshtml");
+            //return View("~/Views/User/chooseUserType.cshtml");
+            //return View();
+        }
+
+        public IActionResult adminLogin()
+        {
+            return View("~/Views/Admins/adminLogin.cshtml");
+            //return View("~/Views/User/chooseUserType.cshtml");
             //return View();
         }
 

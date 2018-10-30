@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SuperSuper.Models
 {
-    public class Customer
+    public class Customer: User
     {
         [Key]
         public int Id { get; set; }

@@ -217,26 +217,6 @@ namespace SuperSuper.Controllers
                 ModelState.AddModelError("", "UserName or Password is wrong");
             }
 
-            /*
-            using (SuperSuperContext db = new SuperSuperContext())
-            {
-                var ctm = db.userAcounts.Single(u => u.UserName == customer.UserName && u.Password == customer.Password);
-                if (ctm != null)
-                {
-                    //save id to the session
-                    HttpContext.Session.SetString("id", ctm.Id.ToString());
-                    //save userName to the session
-                    HttpContext.Session.SetString("userName", ctm.UserName.ToString());
-
-                    return RedirectToAction("loggedin");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "UserName or Password is wrong");
-                }
-            }
-            */
-
             return View();
         }
 
@@ -251,6 +231,7 @@ namespace SuperSuper.Controllers
                 return RedirectToAction("login");
             }
         }
+
     }
 
 }

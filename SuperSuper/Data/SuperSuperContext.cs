@@ -23,5 +23,7 @@ namespace SuperSuper.Models
         public DbSet<SuperSuper.Models.Admin> Admin { get; set; }
 
         public DbSet<SuperSuper.Models.SuperUser> SuperUser { get; set; }
+
+        public DbSet<SuperSuper.Models.User> User { get; set; }
     }
 }

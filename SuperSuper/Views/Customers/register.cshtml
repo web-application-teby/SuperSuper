@@ -4,6 +4,22 @@
     ViewData["Title"] = "register";
 }
 
+<head>
+
+   *<script type="text/javascript" src="~/lib/JQuary.js"></script>
+
+    <script>
+            $(document).ready(function () {
+                $("#register").click(function () {
+                    $(".row .from-group .alert alert-success").hide();
+                });
+                $("#register").click(function () {
+                    $(".row .from-group .alert alert-success").show();
+                });
+            });
+        </script>
+
+</head>
 
 <hr />
 <div class="row">
@@ -36,21 +52,28 @@
                 <span asp-validation-for="confirmPassword" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Register" class="btn btn-default" />
+
+                <button id="register">
+                    <input type="submit" value="Register" class="btn btn-default" />
+                </button>
+
+                <div class="alert alert-success">
+                 @*dont forget to add the user name after welcome*@
+                            <div><strong>Welcome!</strong></div>
+                            <div>We are glad you chose to be part of SuperSuper family</div>
+                            <div><a href="/Products" class="alert-link">Create your first SuperSuper purchase</a></div>
+                 </div>
+
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
 
 
-@*<div>
-    <a asp-action="Index">Start your first SuperSuper purchase</a>
-</div>*@
 
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
 
 
 
