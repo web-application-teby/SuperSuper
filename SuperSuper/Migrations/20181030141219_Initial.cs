@@ -9,34 +9,15 @@ namespace SuperSuper.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Admin",
+                name: "CustomerBasket",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true)
+                    ProductName = table.Column<string>(nullable: false),
+                    ProductsCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Admin", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Customer",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserName = table.Column<string>(nullable: false),
-                    Address = table.Column<string>(nullable: false),
-                    EmailAddress = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false),
-                    confirmPassword = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Customer", x => x.Id);
+                    table.PrimaryKey("PK_CustomerBasket", x => x.ProductName);
                 });
 
             migrationBuilder.CreateTable(
@@ -58,6 +39,24 @@ namespace SuperSuper.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PurchesesView",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ProductName = table.Column<string>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
+                    CustomerName = table.Column<string>(nullable: true),
+                    CustomerId = table.Column<int>(nullable: false),
+                    PurchesDate = table.Column<DateTime>(nullable: false),
+                    Purchesed = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PurchesesView", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SuperUser",
                 columns: table => new
                 {
@@ -65,7 +64,7 @@ namespace SuperSuper.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserName = table.Column<int>(nullable: false),
                     Address = table.Column<string>(nullable: true),
-                    EmailAddress = table.Column<string>(nullable: true),
+                    EmailAdress = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -74,13 +73,34 @@ namespace SuperSuper.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    UserType = table.Column<string>(nullable: true),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    EmailAddress = table.Column<string>(nullable: true),
+                    Customer_Password = table.Column<string>(nullable: true),
+                    confirmPassword = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Purcheses",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProductId = table.Column<int>(nullable: true),
-                    CustomerId = table.Column<int>(nullable: true),
+                    ProductId = table.Column<int>(nullable: false),
+                    CustomerId = table.Column<int>(nullable: false),
                     PurchesDate = table.Column<DateTime>(nullable: false),
                     Purchesed = table.Column<bool>(nullable: false)
                 },
@@ -88,17 +108,17 @@ namespace SuperSuper.Migrations
                 {
                     table.PrimaryKey("PK_Purcheses", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Purcheses_Customer_CustomerId",
+                        name: "FK_Purcheses_User_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customer",
+                        principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Purcheses_Product_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Product",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -115,16 +135,19 @@ namespace SuperSuper.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Admin");
+                name: "CustomerBasket");
 
             migrationBuilder.DropTable(
                 name: "Purcheses");
 
             migrationBuilder.DropTable(
+                name: "PurchesesView");
+
+            migrationBuilder.DropTable(
                 name: "SuperUser");
 
             migrationBuilder.DropTable(
-                name: "Customer");
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Product");

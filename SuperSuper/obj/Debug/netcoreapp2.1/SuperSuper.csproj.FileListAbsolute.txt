@@ -303,3 +303,5 @@ C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\R
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
 >>>>>>> master
+C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
+C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
