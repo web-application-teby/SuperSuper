@@ -29,7 +29,7 @@ namespace SuperSuper.Controllers
             model.ForEach(a => a.Purchesed = true);
 
             _context.SaveChanges();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index","Home");
 
         }
         // GET: Purcheses
@@ -40,11 +40,12 @@ namespace SuperSuper.Controllers
             int customerId = (int)HttpContext.Session.GetInt32("customerid");
 
             model = (from c in _context.Purcheses
-                     join u in _context.Product 
+                     join u in _context.Product
                      on c.ProductId equals u.Id
                      where (c.CustomerId == customerId && !c.Purchesed) //this line will filter the secific customer bucket
                      select new PurchesesView
                      {
+                         OriginalPurchesID = c.Id,
                          PurchesDate = c.PurchesDate,
                          Purchesed = c.Purchesed,
                          ProductId = c.ProductId,
@@ -157,14 +158,17 @@ namespace SuperSuper.Controllers
                 return NotFound();
             }
 
-            var purcheses = await _context.Purcheses
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var purcheses = await _context.Purcheses.FindAsync(id);
+            
             if (purcheses == null)
             {
                 return NotFound();
             }
 
-            return View(purcheses);
+            _context.Purcheses.Remove(purcheses);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         // POST: Purcheses/Delete/5

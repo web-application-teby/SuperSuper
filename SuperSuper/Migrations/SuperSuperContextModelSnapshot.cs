@@ -127,6 +127,8 @@ namespace SuperSuper.Migrations
 
                     b.Property<string>("CustomerName");
 
+                    b.Property<int>("OriginalPurchesID");
+
                     b.Property<int>("ProductId");
 
                     b.Property<string>("ProductName");

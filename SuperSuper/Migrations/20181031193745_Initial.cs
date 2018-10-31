@@ -75,6 +75,7 @@ namespace SuperSuper.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    OriginalPurchesID = table.Column<int>(nullable: false),
                     ProductName = table.Column<string>(nullable: true),
                     ProductId = table.Column<int>(nullable: false),
                     CustomerName = table.Column<string>(nullable: true),
