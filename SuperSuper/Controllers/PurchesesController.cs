@@ -46,6 +46,18 @@ namespace SuperSuper.Controllers
             return View("PurchesesView", model);
         }
 
+        public async Task<IActionResult> Buy()
+        {
+
+            int customerId = (int)HttpContext.Session.GetInt32("customerid");
+
+            var model = _context.Purcheses.Where(x => customerId.Equals(x.CustomerId)).ToList();
+            model.ForEach(a => a.Purchesed = true);
+
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
         // GET: Purcheses/Details/5
         public async Task<IActionResult> Details(int? id)
         {

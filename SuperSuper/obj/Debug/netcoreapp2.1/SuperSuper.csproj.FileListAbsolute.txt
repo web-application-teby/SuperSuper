@@ -305,3 +305,9 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor
 >>>>>>> master
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\CustomerBasket.g.cshtml.cs
 C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Purcheses\PurchesesView.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\adminLogin.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\loggedin.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\login.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\register.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Home\login.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\User\chooseUserType.g.cshtml.cs
