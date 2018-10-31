@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SuperSuper.Models
 {
-	public class Admin: User
+	public class Admin
 	{
 		public int Id { get; set; }
 

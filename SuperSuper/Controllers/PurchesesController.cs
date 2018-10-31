@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -24,10 +25,12 @@ namespace SuperSuper.Controllers
         {
             IEnumerable<PurchesesView> model = null;
 
+            int customerId = (int)HttpContext.Session.GetInt32("customerid");
+
             model = (from c in _context.Purcheses
                      join u in _context.Product 
                      on c.ProductId equals u.Id
-                     //where (c.CustomerId == 1 && !c.Purchesed) - this line will filter the secific customer bucket
+                     where (c.CustomerId == customerId && !c.Purchesed) //this line will filter the secific customer bucket
                      select new PurchesesView
                      {
                          PurchesDate = c.PurchesDate,
@@ -40,18 +43,6 @@ namespace SuperSuper.Controllers
 
             _context.SaveChanges();
 
-            //IEnumerable<CustomerBasket> customerBasket = null;
-
-            //customerBasket = from row in _context.PurchesesView
-            //                 group row by row.ProductName into grp
-            //                 select new CustomerBasket
-            //                 {
-            //                     ProductName = grp.Key,
-            //                     ProductsCount = grp.Count()
-            //                 };
-
-
-            //return View("CustomerBasket", customerBasket);
             return View("PurchesesView", model);
         }
 

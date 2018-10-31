@@ -16,9 +16,49 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+        Customer Yarden = new Customer
+        {
+            UserName = "Yarden",
+            Address = "Israel",
+            EmailAddress = "Yarden@gmail.com",
+            Password = "123",
+            confirmPassword = "123"
+        };
+
+        Customer Bar = new Customer
+        {
+            UserName = "Bar",
+            Address = "Israel",
+            EmailAddress = "Bar@gmail.com",
+            Password = "123",
+            confirmPassword = "123"
+        };
+
+        Customer Evg = new Customer
+        {
+            UserName = "Evg",
+            Address = "Israel",
+            EmailAddress = "Evg@gmail.com",
+            Password = "123",
+            confirmPassword = "123"
+        };
+
+        Customer Talia = new Customer
+        {
+            UserName = "Talia",
+            Address = "Israel",
+            EmailAddress = "Talia@gmail.com",
+            Password = "123",
+            confirmPassword = "123"
+        };
         public CustomersController(SuperSuperContext context)
         {
             _context = context;
+
+            _context.Add(Yarden);
+            _context.Add(Bar);
+            _context.Add(Evg);
+            _context.Add(Talia);
         }
 
 
@@ -162,7 +202,7 @@ namespace SuperSuper.Controllers
 
         }
 
-        //register (set)
+        //register (post)
         [HttpPost]
         public ActionResult register(Customer customer)
         {
@@ -176,19 +216,7 @@ namespace SuperSuper.Controllers
             ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
             "\n" + "we are glad you chose to be part of SuperSuper family";
 
-            /* if (ModelState.IsValid)
-             {
-                 using (DBCustomers db = new DBCustomers())
-                 {
-                     db.userAcounts.Add(customer);
-                     db.SaveChanges();
-                 }
-
-                 ModelState.Clear();
-                 ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
-                     "\n" + "we are glad you chose to be part of SuperSuper family";
-             } */
-            return RedirectToAction("Index", "Prusheses");
+            return RedirectToAction("login", customer);
 
         }
 
@@ -198,19 +226,21 @@ namespace SuperSuper.Controllers
             return View();
         }
 
+        
         //login (set)
         [HttpPost]
         public ActionResult login(Customer customer)
         {
-            var ctm = _context.Customer.Single(u => u.UserName == customer.UserName && u.Password == customer.Password);
+            var ctm = _context.Customer.Single(u => (u.UserName.Equals(customer.UserName) && u.Password.Equals(customer.Password)));
             if (ctm != null)
             {
                 //save id to the session
-                HttpContext.Session.SetString("id", ctm.Id.ToString());
+                HttpContext.Session.SetInt32("customerid", ctm.Id);
+                
                 //save userName to the session
                 HttpContext.Session.SetString("userName", ctm.UserName.ToString());
 
-                return RedirectToAction("Index", "Prusheses");
+                return RedirectToAction("Index", "Products");
             }
             else
             {
