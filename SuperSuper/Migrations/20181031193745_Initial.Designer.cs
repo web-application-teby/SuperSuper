@@ -10,7 +10,7 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181031171903_Initial")]
+    [Migration("20181031193745_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -128,6 +128,8 @@ namespace SuperSuper.Migrations
                     b.Property<int>("CustomerId");
 
                     b.Property<string>("CustomerName");
+
+                    b.Property<int>("OriginalPurchesID");
 
                     b.Property<int>("ProductId");
 
