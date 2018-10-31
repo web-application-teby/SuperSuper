@@ -9,6 +9,14 @@
 @*<p>
     <a asp-action="Create">Create New</a>
 </p>*@
+
+<p>
+    <a asp-action="Buy">Buy</a>
+    <br>
+
+</p>
+
+
 <table class="table">
     <thead>
         <tr>
@@ -31,8 +39,7 @@
                 @Html.DisplayFor(modelItem => item.PurchesDate)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
