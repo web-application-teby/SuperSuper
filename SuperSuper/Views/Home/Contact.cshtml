@@ -2,17 +2,16 @@
     ViewData["Title"] = "Contact";
 }
 
-<img src="~/images/contact.jpg" alt="contact" class="img-responsive" />
+<img src="~/images/contact.png" alt="contact" width="500" height="250" />
 
-    <h1 style="color:black;">Contact us</h1>
-
+<h1 style="color:black;">Contact us</h1>
+<body>
     <p>
         Can’t find what you were looking for? We’re here to help. Call customer service at 1800-99-99-99 or leave us a message here:
     </p>
 
     <div class="container">
-        <form action="action_page.php">
-            <br />
+        <form onsubmit="alert('your message successfully sent');return false">
             <label for="fname">First Name</label>
             <input type="text" id="fname" name="First Name" required placeholder="Your first Name...">
             <br />
@@ -23,6 +22,8 @@
             <input type="text" id="lname" name="Last Name" required placeholder="Your Last Name...">
             <br />
             <br />
+
+     
 
             <label for="country">Area</label>
             <select id="area" name="area">
@@ -43,11 +44,13 @@
             <br />
 
             <input type="reset" name="clean form" value="clean form">
-
-            <input type="submit" value="send">
-
+            <input type="submit" value="submit" />
+           
 
         </form>
-        
+
+  
+
 
     </div>
+</body>

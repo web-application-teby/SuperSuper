@@ -10,6 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - SuperSuper</title>
 
+    <br>
+
+    <a class="weatherwidget-io" href="https://forecast7.com/en/32d0934d78/tel-aviv-yafo/" data-label_1="TEL AVIV-YAFO" data-label_2="WEATHER" data-days="5" data-theme="pure">TEL AVIV-YAFO WEATHER</a>
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -44,12 +51,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Purcheses", "Index", "Purcheses", "Register", "Log in")</li>
-                    <li>@Html.ActionLink("Buy Now!", "Index", "Products")</li>
+                    <li>@Html.ActionLink("My Basket", "Index", "Purcheses", "Register", "Log in")</li>
+                    <li>@Html.ActionLink("Buy Now", "Index", "Products")</li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Map">Our Stores</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="Register">Register</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Login">Log in</a></li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
