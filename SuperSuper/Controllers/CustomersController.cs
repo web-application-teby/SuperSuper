@@ -59,6 +59,7 @@ namespace SuperSuper.Controllers
             _context.Add(Bar);
             _context.Add(Evg);
             _context.Add(Talia);
+            _context.SaveChanges();
         }
 
 
