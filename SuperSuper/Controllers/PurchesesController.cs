@@ -13,14 +13,29 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+
+        int t = 0; 
+
         
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;
         }
 
-        // GET: Purcheses
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Buy()
+        {
+
+            int customerId = 2; //workaround till we will have customer ID
+
+            var model = _context.Purcheses.Where(x => customerId.Equals(x.CustomerId)).ToList();
+            model.ForEach(a => a.Purchesed = true);
+
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
+
+        }
+            // GET: Purcheses
+            public async Task<IActionResult> Index()
         {
             IEnumerable<PurchesesView> model = null;
 
@@ -70,7 +85,7 @@ namespace SuperSuper.Controllers
                 return NotFound();
             }
 
-            return View(purcheses);
+            return View("Purcheses", id);
         }
 
         // GET: Purcheses/Create
