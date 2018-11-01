@@ -14,24 +14,25 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        Admin a = new Admin()
-        {
-            Name = "Talia" ,
-            Password = "aaa"
-        };
-
-        static int i = 0;
-
         public AdminsController(SuperSuperContext context)
         {
             _context = context;
+            Admin a = new Admin()
+            {
+                Name = "Talia",
+                Password = "aaa"
+            };
 
-            if (i < 1)
+
+            try
+            {
+                var ctm = _context.Admin.Single(u => u.Name == a.Name);
+            }
+            catch
             {
                 _context.Add(a);
-                i++;
+                _context.SaveChanges();
             }
-            
         }
 
         // GET: Admins

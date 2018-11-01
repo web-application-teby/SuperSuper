@@ -33,7 +33,7 @@ namespace SuperSuper.Controllers
 
         public IActionResult adminLogin()
         {
-            return RedirectToAction("adminLogin", "Customers");
+            return RedirectToAction("adminLogin", "Admins");
             //return View("~/Views/Admins/adminLogin.cshtml");
             //return View("~/Views/User/chooseUserType.cshtml");
             //return View();
