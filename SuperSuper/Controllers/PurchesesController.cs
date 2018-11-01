@@ -27,9 +27,9 @@ namespace SuperSuper.Controllers
 
             var model = _context.Purcheses.Where(x => customerId.Equals(x.CustomerId)).ToList();
             model.ForEach(a => a.Purchesed = true);
-
             _context.SaveChanges();
-            return RedirectToAction("Index","Home");
+
+            return RedirectToAction("Index", "Home");
 
         }
         // GET: Purcheses
@@ -37,25 +37,31 @@ namespace SuperSuper.Controllers
         {
             IEnumerable<PurchesesView> model = null;
 
-            int customerId = (int)HttpContext.Session.GetInt32("customerid");
+            try
+            {
+                int customerId = (int)HttpContext.Session.GetInt32("customerid");
 
-            model = (from c in _context.Purcheses
-                     join u in _context.Product
-                     on c.ProductId equals u.Id
-                     where (c.CustomerId == customerId && !c.Purchesed) //this line will filter the secific customer bucket
-                     select new PurchesesView
-                     {
-                         OriginalPurchesID = c.Id,
-                         PurchesDate = c.PurchesDate,
-                         Purchesed = c.Purchesed,
-                         ProductId = c.ProductId,
-                         CustomerId = c.CustomerId,
-                         ProductName = u.Name
-                     }
-                     );
+                model = (from c in _context.Purcheses
+                         join u in _context.Product
+                         on c.ProductId equals u.Id
+                         where (c.CustomerId == customerId && !c.Purchesed) //this line will filter the secific customer bucket
+                         select new PurchesesView
+                         {
+                             OriginalPurchesID = c.Id,
+                             PurchesDate = c.PurchesDate,
+                             Purchesed = c.Purchesed,
+                             ProductId = c.ProductId,
+                             CustomerId = c.CustomerId,
+                             ProductName = u.Name
+                         }
+                         );
 
-            _context.SaveChanges();
-
+                _context.SaveChanges();
+            }
+            catch
+            {
+                return RedirectToAction("login", "Customers");
+            }
             return View("PurchesesView", model);
         }
 

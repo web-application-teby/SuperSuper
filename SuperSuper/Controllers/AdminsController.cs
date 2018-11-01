@@ -14,9 +14,24 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+        Admin a = new Admin()
+        {
+            Name = "Talia" ,
+            Password = "aaa"
+        };
+
+        static int i = 0;
+
         public AdminsController(SuperSuperContext context)
         {
             _context = context;
+
+            if (i < 1)
+            {
+                _context.Add(a);
+                i++;
+            }
+            
         }
 
         // GET: Admins
@@ -164,7 +179,7 @@ namespace SuperSuper.Controllers
             if (ctm != null)
             {
                 //save id to the session
-                HttpContext.Session.SetString("id", ctm.Id.ToString());
+                HttpContext.Session.SetInt32("id", ctm.Id);
                 //save userName to the session
                 HttpContext.Session.SetString("Name", ctm.Name.ToString());
 

@@ -122,39 +122,45 @@ namespace SuperSuper.Controllers
 
         public async Task<IActionResult> Add(int? id)
         {
-            int customerId = (int)HttpContext.Session.GetInt32("customerid");
-
-            var customer = await _context.Customer
+            try
+            {
+                int customerId = (int)HttpContext.Session.GetInt32("customerid");
+                var customer = await _context.Customer
                 .FirstOrDefaultAsync(cu => cu.Id == customerId);
-            if (customer == null)
+                if (customer == null)
+                {
+                    return NotFound();
+                }
+
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var product = await _context.Product
+                    .FirstOrDefaultAsync(m => m.Id == id);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+
+                Purcheses p = new Purcheses
+                {
+                    Product = product,
+                    Customer = customer,
+                    PurchesDate = DateTime.Now,
+                    Purchesed = false
+                };
+
+                _context.Purcheses.Add(p);
+                _context.SaveChanges();
+            }
+            catch
             {
-                return NotFound();
+                return RedirectToAction("login", "Customers");
             }
 
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Product
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            Purcheses p = new Purcheses
-            {
-                Product = product,
-                Customer = customer,
-                PurchesDate = DateTime.Now,
-                Purchesed = false
-            };
-
-            _context.Purcheses.Add(p);
-            _context.SaveChanges();
-
-            TempData["Message"] = "Product " + product.Name + " was added to your basket";
+            
             return RedirectToAction("Index");
         }
 
