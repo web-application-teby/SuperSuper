@@ -52,9 +52,18 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("My Basket", "Index", "Purcheses", "Register", "Log in")</li>
+                    <li>
+                        <div id="transDemo2">
+                            <div class="table-hover">
+                                <img src="~/images/super.png" width="27" height="27">
+                            </div>
+                        </div>
+                    </li>
                     <li>@Html.ActionLink("Buy Now", "Index", "Products")</li>
+
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Map">Our Stores</a></li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
