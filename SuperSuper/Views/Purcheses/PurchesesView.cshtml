@@ -7,15 +7,16 @@
 <h2>@ViewData["Title"]</h2>
 
 @*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+        <a asp-action="Create">Create New</a>
+    </p>*@
 
 <p>
-    <a asp-action="Buy">Buy</a>
+    <button type="button" onclick="alert('Thank you for your purchase. Payment in cash upon delivery'); location.href = 'home'">buy</button>
+       
+        
     <br>
 
 </p>
-
 
 <table class="table">
     <thead>
@@ -32,18 +33,19 @@
     <tbody>
 
 
-@foreach (SuperSuper.Models.PurchesesView item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PurchesDate)
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.OriginalPurchesID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (SuperSuper.Models.PurchesesView item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PurchesDate)
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.OriginalPurchesID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
