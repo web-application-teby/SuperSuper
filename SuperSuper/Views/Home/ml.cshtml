@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Getting Started with ml5.js</title>
+    <script src="https://unpkg.com/ml5@0.1.1/dist/ml5.min.js"></script>
+</head>
+<body>
+    <h1>Take a snapshot of the current video stream</h1>
+    Click on the Start WebCam button.
+    <p>
+        <button onclick="startWebcam();">Start WebCam</button>
+        <button onclick="snapshot();">want to buy this</button>
+    </p>
+    <video onclick="snapshot(this);" width=400 height=400 id="video" controls autoplay></video>
+    <p>
+
+        Screenshots :
+    <p>
+        <canvas id="myCanvas" width="400" height="400"></canvas>
+
+        <h1>Image classification using MobileNet</h1>
+<p>
+        The MobileNet model labeled this as
+        <span id="result">...</span> with a confidence of
+        <span id="probability">...</span>
+    </p>
+   
+</body>
+
+<script>
+
+    var image = new Image();
+
+    function startml(img) {
+        // The image we want to classify
+        const image = img;
+        // The result tag in the HTML
+        const result = document.getElementById('result');
+        // The probability tag in the HTML
+        const probability = document.getElementById('probability');
+
+        // Initialize the Image Classifier method with MobileNet
+        const classifier = ml5.imageClassifier('MobileNet', function () {
+            console.log('Model Loaded!');
+        });
+
+        // Make a prediction with the selected image
+        // This will return an array with a default of 10 options with their probabilities
+        classifier.predict(image, function (err, results) {
+            result.innerText = results[0].className;
+            probability.innerText = results[0].probability.toFixed(4);
+        });
+    }
+
+    //--------------------
+    // GET USER MEDIA CODE
+    //--------------------
+    navigator.getUserMedia = (navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia);
+
+    var video;
+    var webcamStream;
+
+    function startWebcam() {
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia(
+
+                // constraints
+                {
+                    video: true,
+                    audio: false
+                },
+
+                // successCallback
+                function (localMediaStream) {
+                    video = document.querySelector('video');
+                    video.src = window.URL.createObjectURL(localMediaStream);
+                    webcamStream = localMediaStream;
+                },
+
+                // errorCallback
+                function (err) {
+                    console.log("The following error occured: " + err);
+                }
+            );
+        } else {
+            console.log("getUserMedia not supported");
+        }
+    }
+
+    //---------------------
+    // TAKE A SNAPSHOT CODE
+    //---------------------
+    var canvas, ctx;
+
+    //function init() {
+    //    // Get the canvas and obtain a context for
+    //    // drawing in it
+    //    canvas = document.getElementById("myCanvas");
+    //    ctx = canvas.getContext('2d');
+    //}
+
+    //function snapshot() {
+    //    // Draws current image from the video element into the canvas
+    //    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    //    image.id = "pic"
+    //    image.src = ctx.toDataURL();
+    //    //image.src = document.getElementById("video");
+    //    startml(image)
+
+    function snapshot() {
+        canvas = document.getElementById("myCanvas");
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        image.id = "pic"
+        image.src = canvas.toDataURL();
+        startml(image);
+    }
+   
+    
+</script>
+</html>
