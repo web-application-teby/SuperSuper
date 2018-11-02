@@ -63,7 +63,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n<h2>Map</h2>\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(84, 268, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "553bdca5154d4f8691ccd346c47ad4bb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e8b7fcbbda174918b24e877f2c459d28", async() => {
                 BeginContext(90, 255, true);
                 WriteLiteral("\r\n    <style>\r\n        /* Set the size of the div element that contains the map */\r\n        #map {\r\n            height: 400px; /* The height is 400 pixels */\r\n            width: 100%; /* The width is the width of the web page */\r\n        }\r\n    </style>\r\n");
                 EndContext();
@@ -83,7 +83,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(354, 2130, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28aa36eb58d741ed9c93872c6a3b2ebd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e679e06cdf064e0d8b42f23a5779f512", async() => {
                 BeginContext(360, 2117, true);
                 WriteLiteral(@"
     <h3> Our stores</h3>
