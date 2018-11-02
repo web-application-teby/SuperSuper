@@ -59,10 +59,16 @@ namespace SuperSuper.Controllers
             return View(admin);
         }
 
-        // GET: Admins/Create
-        public IActionResult Create()
+        // GET: Admins/CreateProduct
+        public IActionResult CreateProduct()
         {
-            return View();
+            return RedirectToAction("Create","Products");
+        }
+
+        // GET: Admins/EditProduct
+        public IActionResult EditProduct()
+        {
+            return RedirectToAction("Index", "Products");
         }
 
         // POST: Admins/Create

@@ -214,8 +214,18 @@ namespace SuperSuper.Controllers
                          group row by row.Name into grp
                          select grp.OrderBy(a => a.Price).First();
 
-            return View(result);
-            //return View(await _context.Product.ToListAsync());
+            //check if customer or admin
+            try
+            {
+                int SessionId = (int)HttpContext.Session.GetInt32("id");
+                var admin = _context.Admin.Single(cu => cu.Id == SessionId);
+                return View("IndexAdmin", result);
+            }
+            catch
+            {
+                return View(result);
+            }
+
         }
 
         // GET: Products/Details/5
@@ -299,7 +309,7 @@ namespace SuperSuper.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Product.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
