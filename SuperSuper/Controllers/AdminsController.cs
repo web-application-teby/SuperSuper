@@ -17,20 +17,20 @@ namespace SuperSuper.Controllers
         public AdminsController(SuperSuperContext context)
         {
             _context = context;
-            Admin a = new Admin()
+            Admin admin = new Admin()
             {
-                Name = "Talia",
-                Password = "aaa"
+                Name = "admin",
+                Password = "admin"
             };
 
 
             try
             {
-                var ctm = _context.Admin.Single(u => u.Name == a.Name);
+                var ctm = _context.Admin.Single(u => u.Name == admin.Name);
             }
             catch
             {
-                _context.Add(a);
+                _context.Add(admin);
                 _context.SaveChanges();
             }
         }
