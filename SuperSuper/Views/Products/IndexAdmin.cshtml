@@ -1,0 +1,65 @@
+﻿@model IEnumerable<SuperSuper.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+    @ViewBag.Message
+}
+
+<h2>Index</h2>
+
+<div id="filter-blog">
+    @using (Html.BeginForm("Index", "Products", FormMethod.Post))
+    {
+        <label>Search a product:</label> <br />
+        <label for="Category">Category</label> @Html.DropDownList("category", ViewBag.EnumList as SelectList)
+        <label><input id="input-h" type="checkbox" name="Diet" value="true" style="width:20px;">Diet </label>
+        <input id="input-h" type="search" name="productName" maxlength="20" placeholder="product Name" style="width:105px;">
+        <input id="btn-filter" type="submit" value="Search">
+    }
+</div>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diet)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit Product</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Extra Details</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Admins/Index"> Back to Admin-Home </a>
