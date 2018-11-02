@@ -16,50 +16,29 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        Customer Yarden = new Customer
+        Customer customer = new Customer
         {
-            UserName = "Yarden",
+            UserName = "customer",
             Address = "Israel",
             EmailAddress = "Yarden@gmail.com",
-            Password = "123",
-            confirmPassword = "123"
+            Password = "customer",
+            confirmPassword = "customer"
         };
-
-        Customer Bar = new Customer
-        {
-            UserName = "Bar",
-            Address = "Israel",
-            EmailAddress = "Bar@gmail.com",
-            Password = "123",
-            confirmPassword = "123"
-        };
-
-        Customer Evg = new Customer
-        {
-            UserName = "Evg",
-            Address = "Israel",
-            EmailAddress = "Evg@gmail.com",
-            Password = "123",
-            confirmPassword = "123"
-        };
-
-        Customer Talia = new Customer
-        {
-            UserName = "Talia",
-            Address = "Israel",
-            EmailAddress = "Talia@gmail.com",
-            Password = "123",
-            confirmPassword = "123"
-        };
+        
         public CustomersController(SuperSuperContext context)
         {
             _context = context;
 
-            _context.Add(Yarden);
-            _context.Add(Bar);
-            _context.Add(Evg);
-            _context.Add(Talia);
-            _context.SaveChanges();
+            try
+            {
+                var ctm = _context.Customer.Single(u => u.UserName == customer.UserName);
+            }
+            catch
+            {
+                _context.Add(customer);
+                _context.SaveChanges();
+            }
+            
         }
 
 

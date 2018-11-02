@@ -1,13 +1,16 @@
 ﻿@model SuperSuper.Models.Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Product Details";
 }
 
-<h2>Details</h2>
+
+<h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Product</h4>
+    <h4>@ViewData["Title2"]</h4>
+
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,15 +31,20 @@
         <dd>
             @Html.DisplayFor(model => model.Diet)
         </dd>
-        @*<dt>
-            @Html.DisplayNameFor(model => model.Supplier)
+        <dt>
+            @Html.DisplayNameFor(model => model.Kosher)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Supplier)
-        </dd>*@
+            @Html.DisplayFor(model => model.Kosher)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Calories)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Calories)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
