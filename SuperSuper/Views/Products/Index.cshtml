@@ -5,7 +5,7 @@
     @ViewBag.Message
 }
 
-<h2>Index</h2>
+<h1 style="color:white;">Our Products</h1>
 
 <div id="filter-blog">
     @using (Html.BeginForm("Index", "Products", FormMethod.Post))
@@ -20,8 +20,8 @@
 
 
 @*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+        <a asp-action="Create">Create New</a>
+    </p>*@
 <table class="table">
     <thead>
         <tr>
@@ -38,22 +38,23 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diet)
-            </td>
-            <td>
-                <a asp-action="Add" asp-route-id="@item.Id">Add Product</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Extra Details</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diet)
+                </td>
+                <td>
+                    <a asp-action="Add" asp-route-id="@item.Id">Add Product</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Extra Details</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
