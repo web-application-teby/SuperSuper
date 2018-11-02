@@ -62,6 +62,7 @@ namespace SuperSuper.Migrations
                     Diet = table.Column<bool>(nullable: false),
                     Supplier = table.Column<string>(nullable: true),
                     Kosher = table.Column<bool>(nullable: false),
+                    Calories = table.Column<int>(nullable: false),
                     category = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
