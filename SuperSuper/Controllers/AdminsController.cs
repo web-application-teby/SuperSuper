@@ -184,7 +184,7 @@ namespace SuperSuper.Controllers
                 //save userName to the session
                 HttpContext.Session.SetString("Name", ctm.Name.ToString());
 
-                return RedirectToAction("Index", "Admins");
+                return RedirectToAction("Create", "Products");
             }
             else
             {
