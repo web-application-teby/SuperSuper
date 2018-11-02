@@ -4,17 +4,15 @@
     ViewData["Title"] = "Update Products";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="CreateProduct">Create New Product</a>
-</p>
+    <br /><br />
+    <button type="button" onclick="location.href='@Url.Action("CreateProduct", "Admins")'" class="btn btn-default"> Create product</button>
 
-<p>
-    <a asp-action="EditProduct">Edit Products</a>
-</p>
+    <button type="button" onclick="location.href='@Url.Action("EditProduct", "Admins")'" class="btn btn-default"> Edit product</button>
+    
 
-
-<h2>Statistics</h2>
+    <h1>Statistics</h1>
 
 
