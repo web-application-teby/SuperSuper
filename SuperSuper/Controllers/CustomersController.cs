@@ -219,6 +219,7 @@ namespace SuperSuper.Controllers
 
             return RedirectToAction("login", customer);
 
+
         }
 
         //login (get)
@@ -227,7 +228,7 @@ namespace SuperSuper.Controllers
             return View();
         }
 
-        
+
         //login (set)
         [HttpPost]
         public ActionResult login(Customer customer)
@@ -237,7 +238,7 @@ namespace SuperSuper.Controllers
             {
                 //save id to the session
                 HttpContext.Session.SetInt32("customerid", ctm.Id);
-                
+
                 //save userName to the session
                 HttpContext.Session.SetString("userName", ctm.UserName.ToString());
 
