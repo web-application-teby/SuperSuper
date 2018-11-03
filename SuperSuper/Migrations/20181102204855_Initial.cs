@@ -40,18 +40,6 @@ namespace SuperSuper.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerBasket",
-                columns: table => new
-                {
-                    ProductName = table.Column<string>(nullable: false),
-                    ProductsCount = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerBasket", x => x.ProductName);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Product",
                 columns: table => new
                 {
@@ -82,7 +70,10 @@ namespace SuperSuper.Migrations
                     CustomerName = table.Column<string>(nullable: true),
                     CustomerId = table.Column<int>(nullable: false),
                     PurchesDate = table.Column<DateTime>(nullable: false),
-                    Purchesed = table.Column<bool>(nullable: false)
+                    Purchesed = table.Column<bool>(nullable: false),
+                    Supplier = table.Column<string>(nullable: true),
+                    ProductCategory = table.Column<int>(nullable: false),
+                    Count = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -161,9 +152,6 @@ namespace SuperSuper.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Admin");
-
-            migrationBuilder.DropTable(
-                name: "CustomerBasket");
 
             migrationBuilder.DropTable(
                 name: "Purcheses");

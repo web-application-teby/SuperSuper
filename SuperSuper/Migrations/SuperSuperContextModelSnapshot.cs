@@ -59,18 +59,6 @@ namespace SuperSuper.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("SuperSuper.Models.CustomerBasket", b =>
-                {
-                    b.Property<string>("ProductName")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ProductsCount");
-
-                    b.HasKey("ProductName");
-
-                    b.ToTable("CustomerBasket");
-                });
-
             modelBuilder.Entity("SuperSuper.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -125,11 +113,15 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Count");
+
                     b.Property<int>("CustomerId");
 
                     b.Property<string>("CustomerName");
 
                     b.Property<int>("OriginalPurchesID");
+
+                    b.Property<int>("ProductCategory");
 
                     b.Property<int>("ProductId");
 
@@ -138,6 +130,8 @@ namespace SuperSuper.Migrations
                     b.Property<DateTime>("PurchesDate");
 
                     b.Property<bool>("Purchesed");
+
+                    b.Property<string>("Supplier");
 
                     b.HasKey("Id");
 

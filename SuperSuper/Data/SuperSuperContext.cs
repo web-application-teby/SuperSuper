@@ -28,7 +28,6 @@ namespace SuperSuper.Models
         
         public DbSet<SuperSuper.Models.PurchesesView> PurchesesView { get; set; }
 
-        public DbSet<SuperSuper.Models.CustomerBasket> CustomerBasket { get; set; }
 
     }
 }

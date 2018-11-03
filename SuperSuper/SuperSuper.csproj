@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Admins\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Products\IndexAdmin.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

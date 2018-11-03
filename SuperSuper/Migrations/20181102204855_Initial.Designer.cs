@@ -10,7 +10,7 @@ using SuperSuper.Models;
 namespace SuperSuper.Migrations
 {
     [DbContext(typeof(SuperSuperContext))]
-    [Migration("20181102103202_Initial")]
+    [Migration("20181102204855_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,18 +59,6 @@ namespace SuperSuper.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customer");
-                });
-
-            modelBuilder.Entity("SuperSuper.Models.CustomerBasket", b =>
-                {
-                    b.Property<string>("ProductName")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ProductsCount");
-
-                    b.HasKey("ProductName");
-
-                    b.ToTable("CustomerBasket");
                 });
 
             modelBuilder.Entity("SuperSuper.Models.Product", b =>
@@ -127,11 +115,15 @@ namespace SuperSuper.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Count");
+
                     b.Property<int>("CustomerId");
 
                     b.Property<string>("CustomerName");
 
                     b.Property<int>("OriginalPurchesID");
+
+                    b.Property<int>("ProductCategory");
 
                     b.Property<int>("ProductId");
 
@@ -140,6 +132,8 @@ namespace SuperSuper.Migrations
                     b.Property<DateTime>("PurchesDate");
 
                     b.Property<bool>("Purchesed");
+
+                    b.Property<string>("Supplier");
 
                     b.HasKey("Id");
 

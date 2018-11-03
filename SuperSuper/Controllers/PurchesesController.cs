@@ -14,10 +14,30 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
+        Purcheses p1 = new Purcheses { CustomerId = 1, ProductId = 1, PurchesDate = DateTime.Now, Purchesed = true };
         
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;
+
+                _context.Add(p1);
+                //_context.Add(p2);
+                //_context.Add(p3);
+                //_context.Add(p4);
+                //_context.Add(p5);
+                //_context.Add(p6);
+                //_context.Add(p7);
+                //_context.Add(p8);
+                //_context.Add(p9);
+                //_context.Add(p10);
+                //_context.Add(p11);
+                //_context.Add(p12);
+                //_context.Add(p13);
+                //_context.Add(p14);
+                //_context.Add(p15);
+                //_context.Add(p16);
+                //_context.Add(p17);
+                _context.SaveChanges();
         }
 
         public async Task<IActionResult> Buy()
@@ -44,7 +64,7 @@ namespace SuperSuper.Controllers
                 model = (from c in _context.Purcheses
                          join u in _context.Product
                          on c.ProductId equals u.Id
-                         where (c.CustomerId == customerId && !c.Purchesed) //this line will filter the secific customer bucket
+                         where (c.CustomerId == customerId && !c.Purchesed) //this line filters the secific customer bucket
                          select new PurchesesView
                          {
                              OriginalPurchesID = c.Id,

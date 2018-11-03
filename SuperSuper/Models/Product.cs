@@ -1,15 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace SuperSuper.Models
 {
-	public class Product
+    [DataContract]
+    public class Product
 	{
-		public int Id { get; set; }
+        [DataMember(Name = "y")]
+        public int Id { get; set; }
 
-		public string Name { get; set; }
+        [DataMember(Name = "label")]
+        public string Name { get; set; }
         
 		public double Price { get; set; }
 

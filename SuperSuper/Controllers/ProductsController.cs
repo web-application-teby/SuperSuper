@@ -40,24 +40,33 @@ namespace SuperSuper.Controllers
         {
 
             _context = context;
-            _context.Add(p1); 
-            _context.Add(p2);
-            _context.Add(p3);
-            _context.Add(p4);
-            _context.Add(p5);
-            _context.Add(p6);
-            _context.Add(p7);
-            _context.Add(p8);
-            _context.Add(p9);
-            _context.Add(p10);
-            _context.Add(p11);
-            _context.Add(p12);
-            _context.Add(p13);
-            _context.Add(p14);
-            _context.Add(p15);
-            _context.Add(p16);
-            _context.Add(p17);
-            _context.SaveChanges();
+
+            try
+            {
+                var ctm = _context.Product.Single(u => u.Name == p14.Name);
+            }
+            catch
+            {
+                _context.Add(p1);
+                _context.Add(p2);
+                _context.Add(p3);
+                _context.Add(p4);
+                _context.Add(p5);
+                _context.Add(p6);
+                _context.Add(p7);
+                _context.Add(p8);
+                _context.Add(p9);
+                _context.Add(p10);
+                _context.Add(p11);
+                _context.Add(p12);
+                _context.Add(p13);
+                _context.Add(p14);
+                _context.Add(p15);
+                _context.Add(p16);
+                _context.Add(p17);
+                _context.SaveChanges();
+            }
+            
         }
 
 
@@ -102,9 +111,6 @@ namespace SuperSuper.Controllers
                 return RedirectToAction("login", "Customers");
                 
             }
-            
-
-
             return RedirectToAction("Index");
         }
 
@@ -122,26 +128,52 @@ namespace SuperSuper.Controllers
                            };
             ViewBag.EnumList = new SelectList(enumData, "Category", "Category");
 
+            try
+            {
+                int SessionId = (int)HttpContext.Session.GetInt32("id");
+                var admin = _context.Admin.Single(cu => cu.Id == SessionId);
+            }
+            catch
+            {
 
-            var result = from row in _context.Product
-                         group row by row.Name into grp
-                         select grp.OrderBy(a => a.Price).First();
+                var result = from row in _context.Product
+                             group row by row.Name into grp
+                             select grp.OrderBy(a => a.Price).First();
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    result = result.Where(x => x.Name.Contains(productName));
+                }
+
+                if (Diet == true)
+                {
+                    result = result.Where(x => x.Diet == true);
+                }
+
+                if (category != Product.Category.All)
+                {
+                    result = result.Where(x => x.category.Equals(category));
+                }
+                return View(await result.ToListAsync());
+            }
+
+            var resultAdmin = from row in _context.Product
+                              select row;
 
             if (!string.IsNullOrEmpty(productName))
             {
-                result = result.Where(x => x.Name.Contains(productName));
+                resultAdmin = resultAdmin.Where(x => x.Name.Contains(productName));
             }
 
             if (Diet == true)
             {
-                result = result.Where(x => x.Diet == true);
+                resultAdmin = resultAdmin.Where(x => x.Diet == true);
             }
 
             if (category != Product.Category.All)
             {
-                result = result.Where(x => x.category.Equals(category));
+                resultAdmin = resultAdmin.Where(x => x.category.Equals(category));
             }
-            return View(await result.ToListAsync());
+            return View("IndexAdmin", resultAdmin);
         }
 
         // GET: Products
@@ -163,7 +195,11 @@ namespace SuperSuper.Controllers
             {
                 int SessionId = (int)HttpContext.Session.GetInt32("id");
                 var admin = _context.Admin.Single(cu => cu.Id == SessionId);
-                return View("IndexAdmin", result);
+
+                var resultAdmin = from row in _context.Product
+                                  select row;
+
+                return View("IndexAdmin", resultAdmin);
             }
             catch
             {
