@@ -149,12 +149,33 @@ Write(ViewData["Title"]);
 #line default
 #line hidden
             EndContext();
+<<<<<<< HEAD
+            BeginContext(874, 54, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d2beef476b4347ecbf98b39d6737dbeb", async() => {
+                BeginContext(920, 4, true);
+                WriteLiteral("Edit");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.Action = (string)__tagHelperAttribute_0.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+            if (__Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper.RouteValues == null)
+            {
+                throw new InvalidOperationException(InvalidTagHelperIndexerAssignment("asp-route-id", "Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper", "RouteValues"));
+            }
+            BeginWriteTagHelperAttribute();
+#line 40 "C:\Users\bmanor\Desktop\Bar\CS\פיתוח אפליקציות אינטרנטיות\SuperSuper\SuperSuper\Views\Products\Details.cshtml"
+                           WriteLiteral(Model.Id);
+=======
             BeginContext(774, 43, true);
             WriteLiteral("\r\n        </dt>\r\n        <dd>\r\n            ");
             EndContext();
             BeginContext(818, 38, false);
 #line 38 "C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\Views\Products\Details.cshtml"
        Write(Html.DisplayFor(model => model.Kosher));
+>>>>>>> master
 
 #line default
 #line hidden
@@ -162,6 +183,11 @@ Write(ViewData["Title"]);
             BeginContext(856, 43, true);
             WriteLiteral("\r\n        </dd>\r\n        <dt>\r\n            ");
             EndContext();
+<<<<<<< HEAD
+            BeginContext(936, 38, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3c6e34e224f94b0eaebea69573772074", async() => {
+                BeginContext(958, 12, true);
+=======
             BeginContext(900, 44, false);
 #line 41 "C:\Users\Evgeny\Documents\GitHub\SuperSuper\SuperSuper\Views\Products\Details.cshtml"
        Write(Html.DisplayNameFor(model => model.Calories));
@@ -185,6 +211,7 @@ Write(ViewData["Title"]);
             BeginContext(1075, 38, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af07e2e4e94e4d87b86c8a2c6797ca89", async() => {
                 BeginContext(1097, 12, true);
+>>>>>>> master
                 WriteLiteral("Back to List");
                 EndContext();
             }

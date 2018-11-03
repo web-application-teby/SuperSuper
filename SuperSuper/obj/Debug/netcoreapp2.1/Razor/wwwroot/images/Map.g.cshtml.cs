@@ -45,6 +45,12 @@ namespace AspNetCore
             BeginContext(45, 99, true);
             WriteLiteral("\r\n<h1>Our stores</h1>\r\n\r\n<h1 style=\"color:white;\"> Our stores</h1>\r\n\r\n\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
+<<<<<<< HEAD
+            BeginContext(84, 268, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3809a0af4cf541c887e30f0d4cde8b84", async() => {
+                BeginContext(90, 255, true);
+                WriteLiteral("\r\n    <style>\r\n        /* Set the size of the div element that contains the map */\r\n        #map {\r\n            height: 400px; /* The height is 400 pixels */\r\n            width: 100%; /* The width is the width of the web page */\r\n        }\r\n    </style>\r\n");
+=======
             BeginContext(144, 270, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cddba0f764b44c3aa582ed93f8a32ec6", async() => {
                 BeginContext(150, 257, true);
@@ -58,6 +64,7 @@ namespace AspNetCore
         }
     </style>
 ");
+>>>>>>> master
                 EndContext();
             }
             );
@@ -74,9 +81,15 @@ namespace AspNetCore
             BeginContext(414, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< HEAD
+            BeginContext(354, 2130, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ace84725ffd46d4a634e532f5ddaf7c", async() => {
+                BeginContext(360, 2117, true);
+=======
             BeginContext(416, 2330, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a147885994941e4a0bc64913f33d45c", async() => {
                 BeginContext(422, 2317, true);
+>>>>>>> master
                 WriteLiteral(@"
 
     <!--The div element for the map -->

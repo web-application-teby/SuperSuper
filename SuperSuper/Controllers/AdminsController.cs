@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperSuper.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json;
 
 namespace SuperSuper.Controllers
 {
@@ -38,6 +40,7 @@ namespace SuperSuper.Controllers
         // GET: Admins
         public async Task<IActionResult> Index()
         {
+
             return View(await _context.Admin.ToListAsync());
         }
 
@@ -180,25 +183,33 @@ namespace SuperSuper.Controllers
 
         //login (set)
         [HttpPost]
-        public ActionResult adminLogin(Admin admin)
+        public ActionResult AdminLogin(Admin admin)
         {
-            var ctm = _context.Admin.Single(u => u.Name == admin.Name && u.Password == admin.Password);
-            if (ctm != null)
+            try
             {
-                //save id to the session
-                HttpContext.Session.SetInt32("id", ctm.Id);
-                //save userName to the session
-                HttpContext.Session.SetString("Name", ctm.Name.ToString());
+                var ctm = _context.Admin.Single(u => (u.Name.Equals(admin.Name) && u.Password.Equals(admin.Password)));
+                if (ctm != null)
+                {
+                    //save id to the session
+                    HttpContext.Session.SetInt32("id", ctm.Id);
+                    //save userName to the session
+                    HttpContext.Session.SetString("Name", ctm.Name.ToString());
 
-                return RedirectToAction("Index", "Admins");
+                    return RedirectToAction("Index", "Admins");
+                }
+
             }
-            else
+            catch (Exception error)
             {
                 ModelState.AddModelError("", "Name or Password is wrong");
+                return View();
             }
 
-            return View();
-        }
+            return RedirectToAction("Index", "Admins");
 
+        }
     }
 }
+
+
+

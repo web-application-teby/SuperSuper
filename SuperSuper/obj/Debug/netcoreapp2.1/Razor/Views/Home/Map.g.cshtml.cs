@@ -62,6 +62,12 @@ using SuperSuper.Models;
             BeginContext(41, 51, true);
             WriteLiteral("\r\n<h1> Our stores</h1>\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
+<<<<<<< HEAD
+            BeginContext(84, 268, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a87220b1d9444739bf044cb7cea1ec0a", async() => {
+                BeginContext(90, 255, true);
+                WriteLiteral("\r\n    <style>\r\n        /* Set the size of the div element that contains the map */\r\n        #map {\r\n            height: 400px; /* The height is 400 pixels */\r\n            width: 100%; /* The width is the width of the web page */\r\n        }\r\n    </style>\r\n");
+=======
             BeginContext(92, 272, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53e5b740d2e3475db7ba1e702514d8d8", async() => {
                 BeginContext(98, 259, true);
@@ -74,6 +80,7 @@ using SuperSuper.Models;
         }
     </style>
 ");
+>>>>>>> master
                 EndContext();
             }
             );
@@ -90,9 +97,15 @@ using SuperSuper.Models;
             BeginContext(364, 2, true);
             WriteLiteral("\r\n");
             EndContext();
+<<<<<<< HEAD
+            BeginContext(354, 2130, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c81f460ffed44598d473ba787055663", async() => {
+                BeginContext(360, 2117, true);
+=======
             BeginContext(366, 2148, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eba3ffdc868b4189a0b39e803b1c7a4e", async() => {
                 BeginContext(372, 2135, true);
+>>>>>>> master
                 WriteLiteral(@"
     <h3> see our locations in Israel:</h3>
     <!--The div element for the map -->
