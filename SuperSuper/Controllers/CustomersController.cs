@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperSuper.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 
 
@@ -217,6 +218,8 @@ namespace SuperSuper.Controllers
                 var ctm = _context.Customer.Single(u => (u.UserName.Equals(customer.UserName) && u.Password.Equals(customer.Password)));
                 if (ctm != null)
                 {
+
+                    HttpContext.Session.Clear();
                     //save id to the session
                     HttpContext.Session.SetInt32("customerid", ctm.Id);
 

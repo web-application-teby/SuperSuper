@@ -14,10 +14,35 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        
+        Purcheses p1 = new Purcheses { CustomerId = 1, ProductId = 1, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p2 = new Purcheses { CustomerId = 1, ProductId = 2, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p3 = new Purcheses { CustomerId = 1, ProductId = 3, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p4 = new Purcheses { CustomerId = 1, ProductId = 4, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p5 = new Purcheses { CustomerId = 1, ProductId = 5, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p6 = new Purcheses { CustomerId = 1, ProductId = 6, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p7 = new Purcheses { CustomerId = 1, ProductId = 7, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p8 = new Purcheses { CustomerId = 1, ProductId = 7, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p9 = new Purcheses { CustomerId = 1, ProductId = 7, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p10 = new Purcheses { CustomerId = 1, ProductId = 7, PurchesDate = DateTime.Now, Purchesed = true };
+
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;
+
+            if (_context.Purcheses.Count() < 1)
+            {
+                _context.Purcheses.Add(p1);
+                _context.Purcheses.Add(p2);
+                _context.Purcheses.Add(p3);
+                _context.Purcheses.Add(p4);
+                _context.Purcheses.Add(p5);
+                _context.Purcheses.Add(p6);
+                _context.Purcheses.Add(p7);
+                _context.Purcheses.Add(p8);
+                _context.Purcheses.Add(p9);
+                _context.Purcheses.Add(p10);
+                _context.SaveChanges();
+            }
         }
 
         public async Task<IActionResult> Buy()
