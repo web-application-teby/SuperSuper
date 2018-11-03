@@ -40,8 +40,40 @@ namespace SuperSuper.Controllers
         // GET: Admins
         public async Task<IActionResult> Index()
         {
+            List<ProductPurchesedCount> result = new List<ProductPurchesedCount>();
 
-            return View(await _context.Admin.ToListAsync());
+            result =
+                (from c in _context.Product
+                 join o in _context.Purcheses
+                 on c.Id equals o.ProductId
+                 group c by c.Name into g
+                 let ProductsCount = g.Count()
+                 select new ProductPurchesedCount
+                 {
+
+                     productName = g.Key,
+                     Count = ProductsCount
+                 }).ToList();
+
+            ViewBag.DataPoints = JsonConvert.SerializeObject(result.ToList());
+
+            List<SupplierCount> supplierCount = new List<SupplierCount>();
+
+            supplierCount =
+                (from c in _context.Product
+                 join o in _context.Purcheses
+                 on c.Id equals o.ProductId
+                 group c by c.Supplier into g
+                 let ProductsCount = g.Count()
+                 select new SupplierCount
+                 {
+                     Supplier = g.Key,
+                     Count = ProductsCount
+                 }).ToList();
+
+            ViewBag.DataPoints2 = JsonConvert.SerializeObject(supplierCount.ToList());
+
+            return View();
         }
 
         // GET: Admins/Details/5
