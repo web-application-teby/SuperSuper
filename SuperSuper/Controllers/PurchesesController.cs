@@ -29,7 +29,7 @@ namespace SuperSuper.Controllers
         {
             _context = context;
 
-            if (_context.Purcheses.Count() < 1)
+            if ((_context.Purcheses.Count() < 1) && (_context.Product.Count() > 1))
             {
                 _context.Purcheses.Add(p1);
                 _context.Purcheses.Add(p2);
