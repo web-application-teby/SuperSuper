@@ -57,27 +57,21 @@ namespace SuperSuper.Controllers
 
             ViewBag.DataPoints = JsonConvert.SerializeObject(result.ToList());
 
-            //List<SupplierCount> supplierCount = new List<SupplierCount>();
+            List<SupplierCount> supplierCount = new List<SupplierCount>();
 
-            //supplierCount =
-            //    (from c in _context.Product
-            //     join o in _context.Purcheses
-            //     on c.Id equals o.ProductId
-            //     group c by c.Supplier into g
-            //     let ProductsCount = g.Count()
-            //     select new SupplierCount
-            //     {
+            supplierCount =
+                (from c in _context.Product
+                 join o in _context.Purcheses
+                 on c.Id equals o.ProductId
+                 group c by c.Supplier into g
+                 let ProductsCount = g.Count()
+                 select new SupplierCount
+                 {
+                     Supplier = g.Key,
+                     Count = ProductsCount
+                 }).ToList();
 
-            //         Supplier = g.Key,
-            //         Count = ProductsCount
-            //     }).ToList();
-
-            //JsonSerializerSettings _jsonSetting = new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore };
-
-            //ViewBag.DataPoints = JsonConvert.SerializeObject(supplierCount.ToList(), _jsonSetting);
-
-
-
+            ViewBag.DataPoints2 = JsonConvert.SerializeObject(supplierCount.ToList());
 
             return View();
         }

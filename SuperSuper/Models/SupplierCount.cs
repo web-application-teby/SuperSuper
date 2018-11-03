@@ -9,7 +9,7 @@ namespace SuperSuper.Models
     [DataContract]
     public class SupplierCount
     {
-        [DataMember(Name = "x")]
+        [DataMember(Name = "label")]
         public string Supplier { get; set; }
 
         [DataMember(Name = "y")]

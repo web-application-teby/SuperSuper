@@ -150,7 +150,7 @@ WriteAttributeValue("", 330, Url.Action("Buy", "Purcheses"), 330, 31, false);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1161, 72, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "305f15c16ea848ebb8e3220ab6c80450", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e520d20abddb4c90a07919ab2620d449", async() => {
                 BeginContext(1223, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

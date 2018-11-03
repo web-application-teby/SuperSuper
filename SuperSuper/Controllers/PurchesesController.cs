@@ -14,13 +14,13 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        Purcheses p1 = new Purcheses { CustomerId = 1, ProductId = 1, PurchesDate = DateTime.Now, Purchesed = true };
+        //Purcheses p1 = new Purcheses { CustomerId = 1, ProductId = 1, PurchesDate = DateTime.Now, Purchesed = true };
         
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;
 
-                _context.Add(p1);
+     //           _context.Add(p1);
                 //_context.Add(p2);
                 //_context.Add(p3);
                 //_context.Add(p4);
@@ -37,7 +37,7 @@ namespace SuperSuper.Controllers
                 //_context.Add(p15);
                 //_context.Add(p16);
                 //_context.Add(p17);
-                _context.SaveChanges();
+       //         _context.SaveChanges();
         }
 
         public async Task<IActionResult> Buy()
