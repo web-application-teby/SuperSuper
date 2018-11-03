@@ -46,7 +46,7 @@ namespace AspNetCore
             WriteLiteral("\r\n<h1>Our stores</h1>\r\n\r\n<h1 style=\"color:white;\"> Our stores</h1>\r\n\r\n\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(144, 270, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5db0ee6f28664f2e98ab2635aa5a9227", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "43549f20d6df4a4ea3e604e325fcf4b0", async() => {
                 BeginContext(150, 257, true);
                 WriteLiteral(@"
 
@@ -75,7 +75,7 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(416, 2330, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e066ca8405b49ed8952d369b0a9b48e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f43ef32ec604f168b74d11b5a0d80bb", async() => {
                 BeginContext(422, 2317, true);
                 WriteLiteral(@"
 
