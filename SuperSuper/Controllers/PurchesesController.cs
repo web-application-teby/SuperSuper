@@ -14,7 +14,13 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        
+        Purcheses p1 = new Purcheses { CustomerId = 1, ProductId = 1, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p2 = new Purcheses { CustomerId = 1, ProductId = 2, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p3 = new Purcheses { CustomerId = 1, ProductId = 3, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p4 = new Purcheses { CustomerId = 1, ProductId = 4, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p5 = new Purcheses { CustomerId = 1, ProductId = 4, PurchesDate = DateTime.Now, Purchesed = true };
+        Purcheses p6 = new Purcheses { CustomerId = 1, ProductId = 4, PurchesDate = DateTime.Now, Purchesed = true };
+
         public PurchesesController(SuperSuperContext context)
         {
             _context = context;

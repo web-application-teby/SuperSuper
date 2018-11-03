@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SuperSuper.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 
 
@@ -219,7 +220,6 @@ namespace SuperSuper.Controllers
                 {
 
                     HttpContext.Session.Clear();
-
                     //save id to the session
                     HttpContext.Session.SetInt32("customerid", ctm.Id);
 
