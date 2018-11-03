@@ -18,6 +18,8 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Delete.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Details.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Edit.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph1.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph2.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\Index.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\Create.g.cshtml.cs
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Customers\Delete.g.cshtml.cs
@@ -66,6 +68,3 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Super
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.dll
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CopyComplete
-C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csprojAssemblyReference.cache
-C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph1.g.cshtml.cs
-C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph2.g.cshtml.cs

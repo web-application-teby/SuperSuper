@@ -12,8 +12,10 @@ h1 {
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
-#example1 {
-    border: 2px solid 'red'; padding: 10px;
+#border {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 25px;
 }
 
 /* Wrapping element */
