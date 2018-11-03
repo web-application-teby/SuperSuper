@@ -13,73 +13,16 @@
     <button type="button" onclick="location.href='@Url.Action("EditProduct", "Admins")'" class="btn btn-default"> Edit product</button>
 
 </p>
+
+
 <h1>Statistics</h1>
 
-<div>
-
-        <script>
-            window.onload = function () {
-
-            var chart = new CanvasJS.Chart("chartContainer", {
-	            theme: "dark1", // "light1", "light2", "dark1", "dark2"
-	            exportEnabled: true,
-	            animationEnabled: true,
-	            title: {
-                    text: "Products Consuming",
-		            fontSize: 21
-	            },
-	            data: [{
-		            type: "pie",
-		            startAngle: 160,
-                    toolTipContent: "<b>{productName}</b>: {y}",
-                    indexLabel: "{productName} - {y}",
-		            dataPoints: @Html.Raw(ViewBag.DataPoints)
-	            }]
-            });
-            chart.render();
-
-            }
-        </script>
-        <div id="chartContainer" style="height: 350px; width: 50%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<button onclick= "location.href='@Url.Action("graph1", "Admins")' "class="btn btn-default">Products consuming</button>
+<button onclick="location.href='@Url.Action("graph2", "Admins")' "class="btn btn-default">The Best Supplier</button>
 
 
 
 
-        </div>
 
-<div>
-    <script>
-    window.onload = function () {
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	theme: "dark2", // "light1", "light2", "dark1", "dark2"
-	title: {
-		text: "The Best Supplier "
-	},
 
-	axisY: {
-		title: "Amount of products",
-		//logarithmic: true
-	},
-	data: [{
-		type: "column",
-		indexLabelFontColor: "white",
-		indexLabel: "{y}",
-		indexLabelFontSize: 16,
-		yValueFormatString: "#,##0.#",
-        toolTipContent: "<b>{label}: {y}</b>",
-		dataPoints:  @Html.Raw(ViewBag.DataPoints2)
-        }]
-        });
-        chart.render();
-
-        }
-    </script>
-
-    <div id="chartContainer" style="height: 350px; width: 100%;"></div>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-</div>
-                           
