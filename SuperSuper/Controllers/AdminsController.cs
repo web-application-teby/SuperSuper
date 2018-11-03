@@ -222,6 +222,7 @@ namespace SuperSuper.Controllers
                 var ctm = _context.Admin.Single(u => (u.Name.Equals(admin.Name) && u.Password.Equals(admin.Password)));
                 if (ctm != null)
                 {
+                    HttpContext.Session.Clear();
                     //save id to the session
                     HttpContext.Session.SetInt32("id", ctm.Id);
                     //save userName to the session
