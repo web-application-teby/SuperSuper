@@ -103,7 +103,7 @@ Write(ViewBag.Message);
             WriteLiteral("</div>\r\n\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(728, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad8beb4fe9fd4d23ba9526c396c04f6e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0355005419d24ddf9cbc2f080a861504", async() => {
                 BeginContext(751, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -194,7 +194,7 @@ Write(ViewBag.Message);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1612, 61, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a491218bde0b4005bcbfd45a5d7d0456", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7f5753e09b34b8b81b35b1b738adceb", async() => {
                 BeginContext(1657, 12, true);
                 WriteLiteral("Edit Product");
                 EndContext();
@@ -229,7 +229,7 @@ Write(ViewBag.Message);
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1697, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d57e0f15b914a19ab72d324afcdc12b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26764c0e09104421bbbfc38905e0b529", async() => {
                 BeginContext(1745, 13, true);
                 WriteLiteral("Extra Details");
                 EndContext();
