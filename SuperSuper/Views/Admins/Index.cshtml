@@ -6,19 +6,27 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<p>
-    <br /><br />
-    <button type="button" onclick="location.href='@Url.Action("CreateProduct", "Admins")'" class="btn btn-default"> Create product</button>
+<body>
+    <table class="table">
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    <br /><br />
+                    <button type="button" onclick="location.href='@Url.Action("CreateProduct", "Admins")'" class="btn btn-default"> Create product</button>
 
-    <button type="button" onclick="location.href='@Url.Action("EditProduct", "Admins")'" class="btn btn-default"> Edit product</button>
+                    <button type="button" onclick="location.href='@Url.Action("EditProduct", "Admins")'" class="btn btn-default"> Edit product</button>
 
-</p>
+                </p>
+                </div>
+            </div>
+    </table>
+</body>
 
 
 <h1>Statistics</h1>
 
-<button onclick= "location.href='@Url.Action("graph1", "Admins")' "class="btn btn-default">Products consuming</button>
-<button onclick="location.href='@Url.Action("graph2", "Admins")' "class="btn btn-default">The Best Supplier</button>
+<button onclick="location.href='@Url.Action("graph1", "Admins")' " class="btn btn-default">Products consuming</button>
+<button onclick="location.href='@Url.Action("graph2", "Admins")' " class="btn btn-default">The Best Supplier</button>
 
 
 
