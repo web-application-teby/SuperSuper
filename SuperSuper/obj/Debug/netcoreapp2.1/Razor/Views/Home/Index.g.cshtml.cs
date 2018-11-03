@@ -61,7 +61,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n<!-- The video -->\r\n<video autoplay muted loop id=\"myVideo\">\r\n    ");
             EndContext();
             BeginContext(113, 52, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("source", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "41ad18fada8344d48923803d051eb5ef", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("source", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93b9230e10b042b087ad57e19137a64e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

@@ -63,7 +63,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n<h1> Our stores</h1>\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(92, 272, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de1aceacd8e8422994348b625e905b6e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "51089099811742a99fa631fd4075691c", async() => {
                 BeginContext(98, 259, true);
                 WriteLiteral(@"
         <style>
@@ -91,7 +91,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(366, 2148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d7805fc071d549428773fcea8b80f2e2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f59da14d40841ba95c21ab98b4945a0", async() => {
                 BeginContext(372, 2135, true);
                 WriteLiteral(@"
     <h3> see our locations in Israel:</h3>
