@@ -16,32 +16,11 @@ namespace SuperSuper.Controllers
     public class CustomersController : Controller
     {
         private readonly SuperSuperContext _context;
-
-        Customer customer = new Customer
-        {
-            UserName = "customer",
-            Address = "Israel",
-            EmailAddress = "Yarden@gmail.com",
-            Password = "customer",
-            confirmPassword = "customer"
-        };
         
         public CustomersController(SuperSuperContext context)
         {
             _context = context;
-
-            try
-            {
-                var ctm = _context.Customer.Single(u => u.UserName == customer.UserName);
-            }
-            catch
-            {
-                _context.Add(customer);
-                _context.SaveChanges();
-            }
-            
         }
-
 
         // GET: Customers
         public async Task<IActionResult> Index()

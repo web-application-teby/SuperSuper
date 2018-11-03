@@ -19,22 +19,6 @@ namespace SuperSuper.Controllers
         public AdminsController(SuperSuperContext context)
         {
             _context = context;
-            Admin admin = new Admin()
-            {
-                Name = "admin",
-                Password = "admin"
-            };
-
-
-            try
-            {
-                var ctm = _context.Admin.Single(u => u.Name == admin.Name);
-            }
-            catch
-            {
-                _context.Add(admin);
-                _context.SaveChanges();
-            }
         }
 
         // GET: Admins
