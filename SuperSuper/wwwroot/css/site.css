@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../images/backgroundOrange.jpg');
+    background-image:url('../images/newbackground2.jpg');
     background-repeat: repeat-x;
     font-family: 'Arima Madurai', cursive;
 }
@@ -73,3 +73,50 @@ text {
     text-align: center;
     position: center;
 }
+
+logo1 {
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: burlywood;
+    text-align: center;
+}
+
+/*video- home/index*/
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 85%;
+    padding: 10px;
+   margin-bottom: 120px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+    #myBtn:hover {
+        background: #ddd;
+        color: black;
+    }
