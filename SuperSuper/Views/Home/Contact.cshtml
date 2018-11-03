@@ -11,46 +11,56 @@
     </p>
 
     <div class="container">
-        <form onsubmit="alert('your message successfully sent');return false">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="First Name" required placeholder="Your first Name...">
-            <br />
-            <br />
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="First Name" required placeholder="Your first Name...">
+        <br />
+        <br />
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="Last Name" required placeholder="Your Last Name...">
+        <br />
+        <br />
+
+        <label for="country">Area</label>
+        <select id="area" name="area">
+            <option value="center">center</option>
+            <option value="shfela">shfela</option>
+            <option value="hasharon">hasharon</option>
+            <option value="north">north</option>
+            <option value="south">south</option>
+            <option value="ayosh">ayosh</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="subject">Write something...</label>
+        <br />
+        <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+        <br />
+        <br />
 
 
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="Last Name" required placeholder="Your Last Name...">
-            <br />
-            <br />
+        <ElementName onselect="value">
+            <button id="contact" onclick="alert('Your message successfully sent');
+                      location.href = '/Home/index'">
+                <input type="submit" value="sumbit" class="btn btn-default" />
+            </button>
+        </ElementName>
 
-     
+        <form onreset="value">
+            <button id="reset" name="clean form" value="clean form" class="btn btn-default">
+                <input type="reset" value="clean form" class="btn btn-default" />
+            </button>
+        </form>
 
-            <label for="country">Area</label>
-            <select id="area" name="area">
-                <option value="center">center</option>
-                <option value="shfela">shfela</option>
-                <option value="hasharon">hasharon</option>
-                <option value="north">north</option>
-                <option value="south">south</option>
-                <option value="ayosh">ayosh</option>
-            </select>
-            <br />
-            <br />
 
-            <label for="subject">Write something...</label>
-            <br />
-            <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
-            <br />
-            <br />
+
+
+        @*<form>
 
             <input type="reset" name="clean form" value="clean form">
             <input type="submit" value="submit" />
-           
 
-        </form>
-
-  
-
-
+        </form>*@
     </div>
 </body>

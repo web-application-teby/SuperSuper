@@ -213,9 +213,9 @@ namespace SuperSuper.Controllers
                 _context.SaveChanges();
             }
 
-            ModelState.Clear();
-            ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
-            "\n" + "we are glad you chose to be part of SuperSuper family";
+            //ModelState.Clear();
+            //ViewBag.Message = "Welcome" + customer.UserName + " " + "(" + customer.Id + ")" + "!" +
+            //"\n" + "we are glad you chose to be part of SuperSuper family";
 
             return RedirectToAction("login", customer);
 
@@ -233,20 +233,24 @@ namespace SuperSuper.Controllers
         [HttpPost]
         public ActionResult login(Customer customer)
         {
-            var ctm = _context.Customer.Single(u => (u.UserName.Equals(customer.UserName) && u.Password.Equals(customer.Password)));
-            if (ctm != null)
+            try
             {
-                //save id to the session
-                HttpContext.Session.SetInt32("customerid", ctm.Id);
+                var ctm = _context.Customer.Single(u => (u.UserName.Equals(customer.UserName) && u.Password.Equals(customer.Password)));
+                if (ctm != null)
+                {
+                    //save id to the session
+                    HttpContext.Session.SetInt32("customerid", ctm.Id);
 
-                //save userName to the session
-                HttpContext.Session.SetString("userName", ctm.UserName.ToString());
+                    //save userName to the session
+                    HttpContext.Session.SetString("userName", ctm.UserName.ToString());
 
-                return RedirectToAction("Index", "Products");
+                    return RedirectToAction("Index", "Products");
+                }
             }
-            else
+            catch (Exception error)
             {
-                ModelState.AddModelError("", "UserName or Password is wrong");
+                ModelState.AddModelError("", "userName or Password is wrong");
+                return View();
             }
 
             return View();
