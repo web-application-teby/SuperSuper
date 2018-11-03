@@ -54,7 +54,7 @@ using SuperSuper.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "028e25a4fd4040d0b74e8bb491fe3ce0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7539c971177a4e49bc61bd5da5fccea3", async() => {
                 BeginContext(31, 123, true);
                 WriteLiteral("\r\n    <title>Getting Started with ml5.js</title>\r\n    <script src=\"https://unpkg.com/ml5@0.1.1/dist/ml5.min.js\"></script>\r\n");
                 EndContext();
@@ -74,7 +74,7 @@ using SuperSuper.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(163, 747, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aae63fdaad884f1c9e5c2c960784a42b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "788d54435cd4447486a4c465aa4315d9", async() => {
                 BeginContext(169, 734, true);
                 WriteLiteral(@"
     <h1>Take a snapshot of the current video stream</h1>
