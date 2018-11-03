@@ -67,3 +67,5 @@ C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Super
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.pdb
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csproj.CopyComplete
 C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\SuperSuper.csprojAssemblyReference.cache
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph1.g.cshtml.cs
+C:\Users\tmazor\source\repos\SuperSuper\SuperSuper\obj\Debug\netcoreapp2.1\Razor\Views\Admins\graph2.g.cshtml.cs

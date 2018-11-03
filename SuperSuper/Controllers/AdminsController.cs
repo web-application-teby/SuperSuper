@@ -40,6 +40,11 @@ namespace SuperSuper.Controllers
         // GET: Admins
         public async Task<IActionResult> Index()
         {
+            return View();
+        }
+
+        public async Task<IActionResult> graph1()
+        {
             List<ProductPurchesedCount> result = new List<ProductPurchesedCount>();
 
             result =
@@ -57,6 +62,11 @@ namespace SuperSuper.Controllers
 
             ViewBag.DataPoints = JsonConvert.SerializeObject(result.ToList());
 
+            return View();
+        }
+
+        public async Task<IActionResult> graph2()
+        {
             List<SupplierCount> supplierCount = new List<SupplierCount>();
 
             supplierCount =
@@ -71,8 +81,7 @@ namespace SuperSuper.Controllers
                      Count = ProductsCount
                  }).ToList();
 
-            ViewBag.DataPoints2 = JsonConvert.SerializeObject(supplierCount.ToList());
-
+            ViewBag.DataPoints = JsonConvert.SerializeObject(supplierCount.ToList());
             return View();
         }
 
@@ -222,7 +231,6 @@ namespace SuperSuper.Controllers
                 var ctm = _context.Admin.Single(u => (u.Name.Equals(admin.Name) && u.Password.Equals(admin.Password)));
                 if (ctm != null)
                 {
-                    HttpContext.Session.Clear();
                     //save id to the session
                     HttpContext.Session.SetInt32("id", ctm.Id);
                     //save userName to the session
