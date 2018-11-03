@@ -174,7 +174,7 @@ Write(ViewBag.Message);
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(1640, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "889b99eaa3fd4075a1cacef8f7a06e58", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7c7863d44164408bae636edeabd0017", async() => {
                 BeginContext(1684, 11, true);
                 WriteLiteral("Add Product");
                 EndContext();
@@ -209,7 +209,7 @@ Write(ViewBag.Message);
             WriteLiteral(" |\r\n                    ");
             EndContext();
             BeginContext(1723, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22cb8a12d3204e7a87f8ce77fb1c7907", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "953d511abf764f39ac4a36dba54b2124", async() => {
                 BeginContext(1771, 13, true);
                 WriteLiteral("Extra Details");
                 EndContext();
