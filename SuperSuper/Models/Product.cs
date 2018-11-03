@@ -19,6 +19,8 @@ namespace SuperSuper.Models
 
         public bool Kosher { get; set; }
 
+        public int Calories { get; set; }
+
         public Category category { get; set; }
 
         public enum Category

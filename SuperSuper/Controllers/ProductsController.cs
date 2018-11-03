@@ -14,100 +14,33 @@ namespace SuperSuper.Controllers
     {
         private readonly SuperSuperContext _context;
 
-        Product p1 = new Product
-        {
-            Name = "Milk 3% Tnuva",
-            Diet = false,
-            Kosher = true,
-            Price = 5.80,
-            Supplier = "Shupersal",
-            category = Product.Category.Dairy
-        };
+        Product p1 = new Product { Name = "Milk 3% Tnuva", Calories = 200, Diet = false, Kosher = true, Price = 5.80, Supplier = "Shupersal", category = Product.Category.Dairy };
+        Product p2 = new Product { Name = "Milk 3% Tnuva", Calories = 200, Diet = false, Kosher = true, Price = 5.90, Supplier = "Tiv Taam", category = Product.Category.Dairy };
+        Product p3 = new Product { Name = "Milk 3% Tnuva", Calories = 200, Diet = false, Kosher = true, Price = 6.00, Supplier = "Super Yehuda", category = Product.Category.Dairy };
+        Product p4 = new Product { Name = "Milk 1% Tnuva", Calories = 100, Diet = false, Kosher = true, Price = 5.80, Supplier = "Shupersal", category = Product.Category.Dairy };
+        Product p5 = new Product { Name = "Milk 2% Tnuva", Calories = 120, Diet = false, Kosher = true, Price = 6.10, Supplier = "Shupersal", category = Product.Category.Dairy };
 
-        Product p7 = new Product
-        {
-            Name = "Milk 1% Tnuva",
-            Diet = true,
-            Kosher = true,
-            Price = 5.90,
-            Supplier = "Shupersal",
-            category = Product.Category.Dairy
-        };
+        Product p6 = new Product { Name = "Shugi", Calories = 800, Diet = false, Kosher = true, Price = 22.80, Supplier = "Shupersal", category = Product.Category.Cupboard };
+        Product p7 = new Product { Name = "Shugi", Calories = 800, Diet = false, Kosher = true, Price = 23.00, Supplier = "Tiv Taam", category = Product.Category.Cupboard };
+        Product p8 = new Product { Name = "Brenflacks", Calories = 600, Diet = true, Kosher = true, Price = 27.30, Supplier = "Shupersal", category = Product.Category.Cupboard };
+        Product p9 = new Product { Name = "Brenflacks", Calories = 600, Diet = true, Kosher = true, Price = 28.90, Supplier = "Tiv Taam", category = Product.Category.Cupboard };
 
-        Product p8 = new Product
-        {
-            Name = "Bamba Osem",
-            Diet = true,
-            Kosher = true,
-            Price = 3.50,
-            Supplier = "Tiv Taam",
-            category = Product.Category.Snacks
-        };
+        Product p10 = new Product { Name = "Bamba Osem", Calories = 1500, Diet = false, Kosher = true, Price = 5.80, Supplier = "Shupersal", category = Product.Category.Snacks };
+        Product p11 = new Product { Name = "Bamba Osem", Calories = 1500, Diet = false, Kosher = true, Price = 5.80, Supplier = "Tiv Taam", category = Product.Category.Snacks };
 
-        Product p2 = new Product
-        {
-            Name = "Milk 2% Tnuva",
-            Diet = false,
-            Kosher = true,
-            Price = 6.10,
-            Supplier = "Super Yehuda",
-            category = Product.Category.Dairy
-        };
+        Product p12 = new Product { Name = "Coca Cola", Calories = 400, Diet = false, Kosher = true, Price = 7.10, Supplier = "Shupersal", category = Product.Category.Drinks };
+        Product p13 = new Product { Name = "Coca Cola Zero", Calories = 0, Diet = true, Kosher = true, Price = 7.10, Supplier = "Shupersal", category = Product.Category.Drinks };
 
-        Product p3 = new Product
-        {
-            Name = "Milk 2% Tnuva",
-            Diet = false,
-            Kosher = true,
-            Price = 6.30,
-            Supplier = "Tiv Taam",
-            category = Product.Category.Dairy
-        };
-
-        Product p4 = new Product
-        {
-            Name = "Bread",
-            Diet = false,
-            Kosher = true,
-            Price = 25.90,
-            Supplier = "Shupersal",
-            category = Product.Category.Cupboard
-        };
-
-        Product p5 = new Product
-        {
-            Name = "Bread",
-            Diet = false,
-            Kosher = true,
-            Price = 16.10,
-            Supplier = "Super Yehuda",
-            category = Product.Category.Cupboard
-        };
-
-        Product p6 = new Product
-        {
-            Name = "Bread",
-            Diet = false,
-            Kosher = true,
-            Price = 16.30,
-            Supplier = "Tiv Taam",
-            category = Product.Category.Cupboard
-        };
-
-        Product p9 = new Product
-        {
-            Name = "Bamba Osem",
-            Diet = false,
-            Kosher = true,
-            Price = 6.30,
-            Supplier = "Tiv Taam",
-            category = Product.Category.Snacks
-        };
+        Product p14 = new Product { Name = "Ice Cream Nestle Vanilla", Calories = 2000, Diet = false, Kosher = true, Price = 32.00, Supplier = "Super Yehuda", category = Product.Category.Frozen };
+        Product p15 = new Product { Name = "Apple Pink Laidy - 1 KG", Calories = 900, Diet = false, Kosher = true, Price = 3.40, Supplier = "Shupersal", category = Product.Category.Fruits };
+        Product p16 = new Product { Name = "Organic Tomatos - 1 KG", Calories = 10, Diet = false, Kosher = true, Price = 5.90, Supplier = "Super Yehuda", category = Product.Category.Vegetables };
+        Product p17 = new Product { Name = "Toilet Paper", Diet = false, Kosher = true, Price = 16.20, Supplier = "Shupersal", category = Product.Category.Toiltries };
 
         public ProductsController(SuperSuperContext context)
         {
+
             _context = context;
-            _context.Add(p1);
+            _context.Add(p1); 
             _context.Add(p2);
             _context.Add(p3);
             _context.Add(p4);
@@ -116,6 +49,14 @@ namespace SuperSuper.Controllers
             _context.Add(p7);
             _context.Add(p8);
             _context.Add(p9);
+            _context.Add(p10);
+            _context.Add(p11);
+            _context.Add(p12);
+            _context.Add(p13);
+            _context.Add(p14);
+            _context.Add(p15);
+            _context.Add(p16);
+            _context.Add(p17);
             _context.SaveChanges();
         }
 
@@ -157,10 +98,13 @@ namespace SuperSuper.Controllers
             }
             catch
             {
-                return RedirectToAction("login", "Customers");
-            }
 
+                return RedirectToAction("login", "Customers");
+                
+            }
             
+
+
             return RedirectToAction("Index");
         }
 
@@ -214,8 +158,18 @@ namespace SuperSuper.Controllers
                          group row by row.Name into grp
                          select grp.OrderBy(a => a.Price).First();
 
-            return View(result);
-            //return View(await _context.Product.ToListAsync());
+            //check if customer or admin
+            try
+            {
+                int SessionId = (int)HttpContext.Session.GetInt32("id");
+                var admin = _context.Admin.Single(cu => cu.Id == SessionId);
+                return View("IndexAdmin", result);
+            }
+            catch
+            {
+                return View(result);
+            }
+
         }
 
         // GET: Products/Details/5
@@ -232,6 +186,8 @@ namespace SuperSuper.Controllers
             {
                 return NotFound();
             }
+
+            ViewData["Title2"] = product.Name;
 
             return View(product);
         }
@@ -299,7 +255,7 @@ namespace SuperSuper.Controllers
             {
                 try
                 {
-                    _context.Update(product);
+                    _context.Product.Update(product);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
